@@ -5,7 +5,7 @@ abstract class conexion
     private $username;
     private $password;
     private $db;
-
+    
     public function __construct()
     {
         $linea = $this->import("conf.csv");
