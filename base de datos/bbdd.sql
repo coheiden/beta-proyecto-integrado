@@ -3,14 +3,14 @@ CREATE DATABASE eventos;
 USE eventos;
 
 CREATE TABLE IF NOT EXISTS administrador(
-    id_administrador INT PRIMARY KEY, 
+    id_administrador INT AUTO_INCREMENT PRIMARY KEY, 
     nombre_usuario VARCHAR(20),
     contraseña VARCHAR(20),
     correo VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS asistente(
-    id_asistente INT PRIMARY KEY,
+    id_asistente INT PRIMARY KEY ,
     dni VARCHAR(9),
     fecha_hora_registro DATETIME,
     codigo_postal INT(5),
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS asistente(
 );
 
 CREATE TABLE IF NOT EXISTS acto(
-    id_acto INT PRIMARY KEY,
+    id_acto INT AUTO_INCREMENT PRIMARY KEY ,
     id_administrador INT,  
     nombre VARCHAR(20),
     descripcion VARCHAR(20),
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS acto(
 );
 
 CREATE TABLE asistente_acto(
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     id_acto INT,
     id_asistente INT,
 
@@ -43,4 +43,7 @@ CREATE TABLE asistente_acto(
 
     CONSTRAINT fk_id_cliente FOREIGN KEY (id_asistente)
     REFERENCES asistente (id_asistente)
-)
+);
+
+INSERT INTO administrador (nombre_usuario, contraseña, correo)
+VALUES ("admin", "admin", " ");
