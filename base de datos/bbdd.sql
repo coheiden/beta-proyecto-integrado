@@ -45,5 +45,7 @@ CREATE TABLE asistente_acto(
     REFERENCES asistente (id_asistente)
 );
 
+-- Añadimos el usuario principal para que pueda crear los usuarios base, lo damos de alta nosotros a este usuario.
+
 INSERT INTO administrador (nombre_usuario, contraseña, correo)
 VALUES ("admin", "admin", " ");
