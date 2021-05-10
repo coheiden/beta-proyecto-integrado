@@ -1,3 +1,22 @@
-	  .container {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+
+
+
+.container {
   max-width: 960px;
+}
+
+.logo {
+	font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    font-size: 70px;
+	color: blue;
+}
+
+.logo-2 {
+  font-weight: 100;
+}
+.logo-1 {
+  font-weight: 300;
 }
