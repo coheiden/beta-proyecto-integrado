@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:200');
 
-
+body {
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
+}
 
 .container {
   max-width: 960px;
   text-align:center;
   font-size: 25px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto
 }
 
 .logo {
@@ -23,43 +36,59 @@
   font-weight: 300;
 }
 
-#box {
-  /* display: flex; */
-  align-items: center;
+footer {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+#formulario {
   justify-content: center;
-  width: 400px;
-  height: 200px;
+
   font-family: 'Raleway';
   font-size: 2.5rem;
+  border-style: solid;
+  border-width: 2px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+
+  
 }
-.gradient-border {
-  --borderWidth: 3px;
-  position: relative;
-  border-radius: var(--borderWidth);
+form {
+
+    margin-top: .55rem;
+    margin-bottom: .55rem;
+    font-size: .875em;
+    color: #6c757d;
+    
+
 }
-.gradient-border:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
+input[type="submit"] {
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+  background-color: #1432b6;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 50%;
 }
 
-
-@keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  
+  border-radius: 4px;
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+}
+input[type="text"],
+input[type="email"] {
+  box-sizing: content-box;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  padding: 1%;
 }
