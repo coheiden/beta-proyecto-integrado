@@ -4,6 +4,8 @@ $admin = new administrador;
 
 
 if (count($_POST) > 0) {
+    echo json_encode(["mensaje" => "1"]);
+    exit;
     if($admin->comprobarDatosPost($_POST)){ // si comprobarDatosPost
     echo json_encode(["mensaje" => "1"]); // es true respuesta json de "1"
     }else {

@@ -3,9 +3,10 @@
 
 <head>
   <title>titulo</title>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./css/custom.css" />
+  <script type="text/javascript" src="js/login.js"></script>
 </head>
 
 <body>
@@ -16,13 +17,13 @@
         <span class="logo logo-2">MAKER</span>
       </div>
 
-      <div id="formulario">
+      <div>
         <form action="" method="post" id="formulario">
           <label for="fname">Nombre usuario:</label><br>
           <input type="text" id="nombre_usuario" name="nombre_usuario" value="Nick" /><br>
           <label for="Contraseña">Contraseña:</label><br>
           <input type="text" id="contraseña" name="contraseña" value="password" /><br>
-          <input type="submit" value="Login" />
+          <input id="saveForm" class="button_text" type="submit" name="submit" value="Login" />
         </form>
       </div>
     </main>
