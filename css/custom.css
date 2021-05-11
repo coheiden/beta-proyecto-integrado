@@ -92,13 +92,25 @@ input[type="password"] {
   width: 50%;
   padding: 1%;
 }
+#negras{
+background-color: black;
+border:1px;
+color:white;
+}
+
+#blancas{
+  background-color: white;
+  border:1px;
+  color:black;
+  }
+  
 
 .caja1{height:1000px;width:10000px;margin:auto;}
 
 
   .header{height:100px;width:1000px;position:relative}
 
-  content{ border: 1px solid black;;height:500px;width:400px;position:absolute;left:220px;}
+  content{ border: 1px solid black;;height:500px;width:1000px;position:absolute;left:220px;}
 
 .cajaizquierda{
 
