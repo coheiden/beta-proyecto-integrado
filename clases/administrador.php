@@ -3,35 +3,40 @@
 class administrador extends conexion
 {
 
+    public function obtenerInfo($usuario)
+    {
 
-    public function obtenerInfo($usuario){
-
-        $sql = "SELECT * from administrador where nombre_usuario = ".$usuario;
+        $sql = 'SELECT * from administrador where nombre_usuario = "' . $usuario . '"';
+        //echo $sql;
         $result = $this->connect()->query($sql);
-        $array_info = $result->fetch_all(MYSQLI_ASSOC);
-
-        return $array_info;
+        if ($result) {
+            $infoUser = $result->fetch_assoc();
+            return $infoUser;
+        };
 
     }
 
-    public function comprobarDatosPost(){
+    public function comprobarDatosPost($datosForm)
+    {
+        $user = $datosForm["user"];
+        $password = $datosForm["password"];
 
+        $infoUser = $this->obtenerInfo($user);
 
-        if (!empty($_POST)) {
-       
-        $array_info = $this->obtenerInfo($_POST["nombre_usuario"]);
-
-            foreach ($array_info as $key => $value) {
-            
-                if (password_verify($_POST["contraseña"], $array_info[$key]["contraseña"])) {
-
-                    session_start();
-                
-                    $_SESSION["nombre_usuario"] = $_POST["nombre_usuario"];
-                    $_SESSION["instante"] = time();
-
-                }
-            }
+        if (!$infoUser) { // si el usuario no existe
+            return false;
         }
+
+        if (password_verify($password, $infoUser["contraseña"])) {
+
+            session_start();
+            $_SESSION["user_id"] = $infoUser["id_administrador"];
+            return true;
+
+        } else {
+            return false;
+
+        }
+
     }
 }

@@ -9,7 +9,7 @@ function main() {
 
 function addListenerForm() {
   let formulario = document.getElementById("formulario");
-  console.log(formulario);
+  //console.log(formulario);
   formulario.addEventListener('submit', function (e) {
     e.preventDefault();
  
@@ -28,7 +28,7 @@ function enviaForm(formElement) {
   };
   xhttp.open("POST", "login.php", true);
   xhttp.send(formData);
-  console.log(formData);
+  //console.log(formData);
 }
 
 function showMessage(message) {
