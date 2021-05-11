@@ -36,26 +36,19 @@ $admin = new administrador;
 
 
     <container id="box">
-    <form action="login.php" method="POST">
+    <form action="" method="post" id="formulario">
 
 
         <label for="fname">Nombre Usuario:</label><br>
-        <input class="border border-primary rounded font-monospace shadow"  type="text"  id="input_login" name="nombre_usuario">
+        <input class="border border-primary rounded font-monospace shadow"  type="text"  id="input_login" name="user" value="user">
         <br>
         <br>
-        <label for="Contraseña">Password:</label>
+        <label for="Contraseña">Contraseña:</label>
         <br>
-        <input class="border border-primary rounded font-monospace shadow" type="password" id="input_login" name="contraseña" value="">
+        <input class="border border-primary rounded font-monospace shadow" type="password" id="input_login" name="password" value="password">
         <br>
         <br>
-    <input class ="btn btn-outline-success border-2 shadow btn-lg" type="submit" id="boton_enviar">
-
-    
-    <?php
-
-        $admin->comprobarDatosPost();
-    
-    ?>
+    <input class ="btn btn-outline-success border-2 shadow btn-lg" type="submit" id="saveForm" value="Login">
 
   </form> 
 
