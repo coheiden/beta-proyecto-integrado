@@ -4,9 +4,9 @@ include_once "autoload.php";
 
 
 
-$admin = new administrador;
+$admins = new listador;
 
-$admin->comprobarDatosPost();
+var_dump($admins->listarAdmins());
 
 
 
