@@ -6,7 +6,7 @@ include_once "autoload.php";
 
 $admin = new administrador;
 
-$admin->comprobarDatosPost("admin");
+$admin->comprobarDatosPost();
 
 
 
