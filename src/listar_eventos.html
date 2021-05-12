@@ -45,34 +45,48 @@
   </head>
   <body>
     
-<header class="navbar sticky-top flex-md-nowrap p-2 shadow bg-light bg-gradient">
-  <span class="navbar col-md-3 col-lg-2 me-0 px-3 ">  
-    <span class="logo logo-1">EVENT
-    <span class="logo logo-2">MAKER</span></span> 
-  </span>
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <div class="container">
-      <div class="row">
-        <div class="col">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg>
-        </div>
-        <div class="col">
-          $_POST["sesion"]
-        </div>
-        <div class="col">
-          <a class="nav fw-bold text-decoration-none" href="#">Cerrar Sesion</a>
-        </div>
-      </div>
-    </div>
-    </li>
-  </ul>
-</header>
+    <header class="navbar navbar-dark sticky-top bg-light flex-md-nowrap p-0 shadow">
+      <span class="navbar col-md-3 col-lg-2 me-0 px-3 ">  
+        <span class="logo logo-1">EVENT
+        <span class="logo logo-2">MAKER</span></span> 
+      </span>
+      
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-dark"></span>
+      </button>
+   
+  
 
-<div class="container-fluid m-2">
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+ <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+ <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+ </svg>
+    </div>
+    <div class="col-3">
+      Column
+    </div>
+    <div class="col-6">
+      <a class="nav fw-bold text-decoration-none" href="#">Cerrar Sesion</a>
+    </div>
+  </div>
+</div>
+
+
+
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <span class="nav-link">Sign out</span>
+
+        </li>
+      </ul>
+    </header>
+
+<div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-5 font-monospace ms-3">
