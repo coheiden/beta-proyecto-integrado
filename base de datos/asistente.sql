@@ -6,7 +6,7 @@ insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, no
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (6, 66, '9/7/2020', null, 'Xerxes', 'Christauffour', 'xchristauffour5@earthlink.net');
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (7, 56, '7/4/2020', null, 'Tadeas', 'Handley', 'thandley6@sohu.com');
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (8, 56, '3/12/2021', '21275', 'Pavel', 'Diggons', 'pdiggons7@cdbaby.com');
-insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (9, 45, '9/14/2020', null, 'Tyler', 'Moger', 'tmoger8@simplemachines.org');
+insert into asistente  (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (9, 45, '9/14/2020', null, 'Tyler', 'Moger', 'tmoger8@simplemachines.org');
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (10, 7, '3/22/2021', '3342', 'Evelyn', 'Kaesmakers', 'ekaesmakers9@mlb.com');
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (11, 98, '9/6/2020', '524039', 'Conchita', 'Kinnin', 'ckinnina@360.cn');
 insert into asistente (id_asistente, dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) values (12, 90, '3/20/2021', null, 'Ferris', 'Chatelain', 'fchatelainb@netvibes.com');
