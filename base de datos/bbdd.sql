@@ -5,7 +5,7 @@ USE eventos;
 CREATE TABLE IF NOT EXISTS administrador(
     id_administrador INT AUTO_INCREMENT PRIMARY KEY, 
     nombre_usuario VARCHAR(20),
-    contraseña VARCHAR(20),
+    contraseña VARCHAR(255),
     correo VARCHAR(20)
 );
 
@@ -48,4 +48,5 @@ CREATE TABLE asistente_acto(
 -- Añadimos el usuario principal para que pueda crear los usuarios base, lo damos de alta nosotros a este usuario.
 
 INSERT INTO administrador (nombre_usuario, contraseña, correo)
-VALUES ("admin", "admin", " ");
+-- password es admin
+VALUES ("admin", "$2y$10$SH.NnmvahLxBzF5eHCtdvuJ2zcb04ktcDIumK3cvpuF0Z2eEoGcqi", " ");
