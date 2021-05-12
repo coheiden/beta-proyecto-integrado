@@ -1,6 +1,6 @@
 <?php
 
-class sesion extends conexion{
+class sesion{
     
     public static function comprobarSesion(){
 
