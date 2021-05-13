@@ -6,7 +6,10 @@ class administrador extends conexion
     public function obtenerInfo($usuario)
     {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e95a254e2d3e425ce5f2c12762872e5a9f961a3d
         $sql = 'SELECT * from administrador where nombre_usuario = "' . $usuario . '"';
         //echo $sql;
         $result = $this->connect()->query($sql);
@@ -36,6 +39,10 @@ class administrador extends conexion
 
         } else {
             return false;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e95a254e2d3e425ce5f2c12762872e5a9f961a3d
         }
 
     }
