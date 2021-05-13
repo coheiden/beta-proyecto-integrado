@@ -1,22 +1,9 @@
-
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
-  addListenerForm();
+  enviaForm();
 }
 
-
-
-function addListenerForm() {
-
-  let formulario = document.getElementById("formulario");
-  formulario.addEventListener('submit', function (e) {
-    
-    e.preventDefault();
-    enviaForm(e.currentTarget);
-
-  });
-}
 
 function enviaForm(formElement) {
     let formData = new FormData(formElement);
