@@ -6,7 +6,9 @@ class administrador extends conexion
     public function obtenerInfo($usuario)
     {
 
+
         $sql = 'SELECT * from administrador where nombre_usuario = "' . $usuario . '"';
+        //echo $sql;
         $result = $this->connect()->query($sql);
         if ($result) {
             $infoUser = $result->fetch_assoc();
@@ -35,7 +37,6 @@ class administrador extends conexion
         } else {
             return false;
         }
+
     }
-
-
 }

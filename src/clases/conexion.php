@@ -29,5 +29,4 @@ abstract class conexion
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->db);
         return $conn;
     }
-
 }
