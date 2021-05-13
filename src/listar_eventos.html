@@ -85,61 +85,28 @@
 <div class="container-fluid">
 =======
 <!-- Fin del header , inicio del menu lateral izquierdo  -->
+
+
+
 <div class="container-fluid m-2">
 >>>>>>> 81a41f40bb7c5f5a868288387489474219884254
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-5 font-monospace ms-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <span class="nav-link active" aria-current="page" href="#">
-              <span class="fs-3">
-              Menu
-            </span>
-          </li>
-          <br>
-          <li class="nav-item">
-            <!-- Primer DropDown Eventos -->
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Eventos
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
-                <li id="listadorEventos" ><a class="dropdown-item" href="#">Listar Eventos</a></li>
-                <li><a class="dropdown-item" href="#">Crear Evento</a></li>
-              </ul>
-            </div>
+      <div class="card bg-seconday p-3 " style="width: 15rem;">
+        <div class="card-header fs-4 fst-italic border border-primary rounded text-center">
+          Menu
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item fs-5">Eventos</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir evento</li>
+          <li class="list-group-item fs-5">Admins</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Admin</li>
+          <li class="list-group-item fs-5">Asistentes</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Asistente</li>
 
-            <!-- Fin dropdown -->
-          </li>
-          <br>
-          <li class="nav-item">
-
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Asistente
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li id="listadorAsistentes" ><a class="dropdown-item" href="#" >Listar Asistentes</a></li>
-                <li><a class="dropdown-item" href="#">Crear Asistentes</a></li>
-              </ul>
-
-          </li>
-          <br>
-          <li class="nav-item">
-
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Admin
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li id="listadorAdmins"><a class="dropdown-item" href="#" >Listar Admins</a></li>
-                <li><a class="dropdown-item" href="#">Añadir Admin</a></li>
-              </ul>
-          </li>
         </ul>
       </div>
-    </nav>
+
+
 
     <!-- Parte de la tabla , rellenar con DOM  -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="contenedor-tabla">
@@ -170,9 +137,10 @@
 
       </tbody>
     </table>
-      </div>
+  </main>
 
-    </main>
+</div>
+
 
     <!-- Fin de la tabla inicio de los scripts -->
   </div>
