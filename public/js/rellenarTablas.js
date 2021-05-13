@@ -22,6 +22,7 @@ function main(){
 
     }
 
+
     function crearTablaEventos(infoEventos){
 
         let tabla = document.getElementById("tabla");
@@ -42,4 +43,5 @@ function main(){
 
         }
     } 
+
 }

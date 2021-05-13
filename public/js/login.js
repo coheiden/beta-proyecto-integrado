@@ -1,16 +1,7 @@
-
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
-  addListenerForm();
-}
-
-
-
-document.addEventListener("DOMContentLoaded", main);
-
-function main() {
-  addListenerForm();
+  enviaForm();
 }
 
 
