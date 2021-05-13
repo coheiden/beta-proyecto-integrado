@@ -23,25 +23,15 @@ function enviaForm(formElement) {
   };
   xhttp.open("POST", "login.php", true);
   xhttp.send(formData);
-  //console.log(formData);
 }
 
 function showMessage(message) {
-  //console.log(message)
-  //div = document.getElementById("mensaje");
-  //div.innerHTML = "Formulario " + message.mensaje;
-  console.log(message.mensaje);
-  
-
 if (message.mensaje == 1) {
   window.setTimeout(function () {
     window.location.href = "listar_eventos.html";
     }, 1000);
 }else {
-  console.log("login invalido");
   let lead = document.getElementsByClassName("lead");
-  console.log(lead);
-  
   lead[0].innerHTML = "-- login invalido --";
   lead[0].setAttribute("class", "lead text-danger");
 }
