@@ -7,12 +7,16 @@ function main() {
 
 
 
-document.addEventListener("DOMContentLoaded", main);
+function addListenerForm() {
 
-function main() {
-  addListenerForm();
+  let formulario = document.getElementById("formulario");
+  formulario.addEventListener('submit', function (e) {
+    
+    e.preventDefault();
+    enviaForm(e.currentTarget);
+
+  });
 }
-
 
 function enviaForm(formElement) {
     let formData = new FormData(formElement);
