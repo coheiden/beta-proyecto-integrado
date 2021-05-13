@@ -6,13 +6,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Event Maker</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../public/js/rellenaTablas.js"></script>
+    <script type="text/javascript" src="../public/js/rellenarTablas.js"></script>
 
 
 
@@ -99,15 +99,18 @@
           </li>
           <br>
           <li class="nav-item">
+            <!-- Primer DropDown Eventos -->
             <div class="dropdown">
               <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Eventos
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Eventos</a></li>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+                <li id="listadorEventos" ><a class="dropdown-item" href="#">Listar Eventos</a></li>
                 <li><a class="dropdown-item" href="#">Crear Evento</a></li>
               </ul>
             </div>
+
+            <!-- Fin dropdown -->
           </li>
           <br>
           <li class="nav-item">
@@ -117,7 +120,7 @@
                 Asistente
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Asistentes</a></li>
+                <li id="listadorAsistentes" ><a class="dropdown-item" href="#" >Listar Asistentes</a></li>
                 <li><a class="dropdown-item" href="#">Crear Asistentes</a></li>
               </ul>
 
@@ -130,7 +133,7 @@
                 Admin
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Admins</a></li>
+                <li id="listadorAdmins"><a class="dropdown-item" href="#" >Listar Admins</a></li>
                 <li><a class="dropdown-item" href="#">Añadir Admin</a></li>
               </ul>
           </li>
@@ -141,7 +144,7 @@
     <!-- Parte de la tabla , rellenar con DOM  -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="contenedor-tabla">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2"> Listado de Eventos</h1> 
+        <h1 class="h2" id="titulo">Listado de Eventos</h1> 
       </div>
 
       <div class="input-group mb-3 w-50">
@@ -164,7 +167,7 @@
         </tr>
       </thead>
       <tbody id="tabla">
-        
+
       </tbody>
     </table>
       </div>
