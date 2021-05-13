@@ -1,42 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.83.1">
     <title>Event Maker</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="../public/js/rellenarTablas.js"></script>
 
-
-
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
     <link href="../public/css/main_web_custom.css" rel="stylesheet">
+
   </head>
   <body>
     
@@ -77,12 +51,12 @@
         <div class="card-header fs-4 fst-italic border border-primary rounded text-center">
           Menu
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item fs-5">Eventos</li>
+        <ul class="list-group list-group-flush " id="menu">
+          <li class="list-group-item fs-5" id="botonEventos">Eventos</li>
           <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir evento</li>
-          <li class="list-group-item fs-5">Admins</li>
+          <li class="list-group-item fs-5" id="botonAdmins">Admins</li>
           <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Admin</li>
-          <li class="list-group-item fs-5">Asistentes</li>
+          <li class="list-group-item fs-5" id="botonAsistentes" >Asistentes</li>
           <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Asistente</li>
 
         </ul>
@@ -93,7 +67,7 @@
     <!-- Parte de la tabla , rellenar con DOM  -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="contenedor-tabla">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2" id="titulo">Listado de Eventos</h1> 
+        <h1 class="h2" id="titulo">Listado de <span id="titulo"> Eventos </span></h1> 
       </div>
 
       <div class="input-group mb-3 w-50">
