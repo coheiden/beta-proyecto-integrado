@@ -35,5 +35,4 @@ if (message.mensaje == 1) {
   lead[0].innerHTML = "-- login invalido --";
   lead[0].setAttribute("class", "lead text-danger");
 }
-
 }
