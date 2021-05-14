@@ -14,7 +14,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                crearTablaEventos(JSON.parse(this.responseText));
+                crearTabla(JSON.parse(this.responseText));
 
             }
         });
@@ -25,7 +25,7 @@ function main() {
     }
 
 
-    function crearTablaEventos(infoEventos) {
+    function crearTabla(infoEventos) {
 
         let tabla = document.getElementById("tabla");
 
@@ -54,7 +54,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                crearTablaAdmins(JSON.parse(this.responseText));
+                crearTabla(JSON.parse(this.responseText));
 
             }
         });
@@ -64,28 +64,6 @@ function main() {
 
     }
 
-
-    
-    function crearTablaAdmins(infoEventos) {
-
-        let tabla = document.getElementById("tabla");
-
-        for (value in infoEventos) {
-
-            let fila = document.createElement("tr");
-
-
-            for (valor in infoEventos[value]) {
-
-                let campo = document.createElement("td");
-                campo.innerHTML = infoEventos[value][valor];
-
-                fila.appendChild(campo);
-            }
-            tabla.appendChild(fila);
-
-        }
-    }
 
 
 
@@ -98,7 +76,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                crearTablaAsistentes(JSON.parse(this.responseText));
+                crearTabla(JSON.parse(this.responseText));
 
             }
         });
@@ -106,28 +84,6 @@ function main() {
         xhttp.open("GET", "asistentes.php", true);
         xhttp.send();
 
-    }
-
-
-    function crearTablaAsistentes(infoEventos) {
-
-        let tabla = document.getElementById("tabla");
-
-        for (value in infoEventos) {
-
-            let fila = document.createElement("tr");
-
-
-            for (valor in infoEventos[value]) {
-
-                let campo = document.createElement("td");
-                campo.innerHTML = infoEventos[value][valor];
-
-                fila.appendChild(campo);
-            }
-            tabla.appendChild(fila);
-
-        }
     }
 
 
@@ -140,15 +96,21 @@ function main() {
 
         botonEvento.addEventListener("click", function(){
 
+            let titulo = document.getElementById("titulo")
+            titulo.innerHTML = "Eventos"
             cargarDatosEventos();
         })
 
         botonAdmins.addEventListener("click", function(){
 
+            let titulo = document.getElementById("titulo")
+            titulo.innerHTML = "Admins"
             cargarDatosAdmins();
         })
 
         botonAsistentes.addEventListener("click", function(){
+            let titulo = document.getElementById("titulo")
+            titulo.innerHTML = "Asistentes"
 
             cargarDatosAsistentes();
         })
