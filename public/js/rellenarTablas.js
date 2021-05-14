@@ -138,7 +138,7 @@ function main() {
         let botonAdmins = document.getElementById("botonAdmins");
         let botonAsistentes = document.getElementById("botonAsistentes");
 
-        console.log(botonEvento)
+        console.log(botonEventos)
 
         botonEventos.addEventListener("click", function(){
 
