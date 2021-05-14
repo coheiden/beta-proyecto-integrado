@@ -1,42 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.83.1">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Event Maker</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../public/js/rellenaTablas.js"></script>
+    <script type="text/javascript" src="../public/js/rellenarTablas.js"></script>
 
-
-
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
     <link href="../public/css/main_web_custom.css" rel="stylesheet">
+
   </head>
   <body>
     
@@ -82,62 +56,32 @@
     </header>
 
 <!-- Fin del header , inicio del menu lateral izquierdo  -->
+
+
+
 <div class="container-fluid m-2">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-5 font-monospace ms-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <span class="nav-link active" aria-current="page" href="#">
-              <span class="fs-3">
-              Menu
-            </span>
-          </li>
-          <br>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Eventos
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Eventos</a></li>
-                <li><a class="dropdown-item" href="#">Crear Evento</a></li>
-              </ul>
-            </div>
-          </li>
-          <br>
-          <li class="nav-item">
+      <div class="card bg-seconday p-3 " style="width: 15rem;">
+        <div class="card-header fs-4 fst-italic border border-primary rounded text-center">
+          Menu
+        </div>
+        <ul class="list-group list-group-flush " id="menu">
+          <li class="list-group-item fs-5" id="botonEventos">Eventos</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir evento</li>
+          <li class="list-group-item fs-5" id="botonAdmins">Admins</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Admin</li>
+          <li class="list-group-item fs-5" id="botonAsistentes" >Asistentes</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Asistente</li>
 
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Asistente
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Asistentes</a></li>
-                <li><a class="dropdown-item" href="#">Crear Asistentes</a></li>
-              </ul>
-
-          </li>
-          <br>
-          <li class="nav-item">
-
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-lg dropdown-toggle m-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Admin
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Listar Admins</a></li>
-                <li><a class="dropdown-item" href="#">Añadir Admin</a></li>
-              </ul>
-          </li>
         </ul>
       </div>
-    </nav>
+
+
 
     <!-- Parte de la tabla , rellenar con DOM  -->
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="contenedor-tabla">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2"> Listado de Eventos</h1> 
+        <h1 class="h2" id="titulo">Listado de <span id="titulo"> Eventos </span></h1> 
       </div>
 
       <div class="input-group mb-3 w-50">
@@ -160,12 +104,13 @@
         </tr>
       </thead>
       <tbody id="tabla">
-        
+
       </tbody>
     </table>
-      </div>
+  </main>
 
-    </main>
+</div>
+
 
     <!-- Fin de la tabla inicio de los scripts -->
   </div>

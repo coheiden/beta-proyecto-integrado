@@ -8,20 +8,18 @@ class listador extends conexion
 
     public function listarAdmins(){
 
-        if (sesion::comprobarSesion() == true) {
+        // if (sesion::comprobarSesion() == true) {
 
-            $sql = 'SELECT * from administrador';
+            $sql = 'SELECT id_administrador, nombre_usuario, correo from administrador';
             $result = $this->connect()->query($sql);
-            if ($result) {
-                $listadoAdmins = $result->fetch_assoc();
+            // if ($result) {
+                $listadoAdmins = $result->fetch_all();
                 return $listadoAdmins;
             };
             
-        }else{
+        // }else{
 
-            echo "sesion no iniciada ";
-
-        }
+        // }
     }
 
     public function listarEventos(){
@@ -33,32 +31,31 @@ class listador extends conexion
             // if ($result) {
             $listadoEventos = $result->fetch_all();
             return $listadoEventos;
-            // };
+        //     };
             
         // }else{
 
-            echo $_SESSION["user_id"];
-            echo "sesion no iniciada <br>";
         // }
 
     }
 
     public function listarAsistentes(){
 
-        if (sesion::comprobarSesion() == true) {
+        // if (sesion::comprobarSesion() == true) {
 
             $sql = 'SELECT id_asistente, dni, nombre, correo from asistente';
             $result = $this->connect()->query($sql);
-            if ($result) {
-                $listadoAsistentes = $result->fetch_assoc();
+            // if ($result) {
+                $listadoAsistentes = $result->fetch_all();
+
                 return $listadoAsistentes;
-            };
+            // };
             
-        }else{
+        // }else{
 
-            echo "sesion no iniciada";
+        //     echo "sesion no iniciada";
 
-        }
+        // }
     }
 
 }
