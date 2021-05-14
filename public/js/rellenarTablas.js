@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main() {
 
-    cambiarTitulo();
     cargarDatosEventos();
+    cambiarTitulo();
 
 
 
@@ -137,8 +137,6 @@ function main() {
         let botonEvento = document.getElementById("botonEventos");
         let botonAdmins = document.getElementById("botonAdmins");
         let botonAsistentes = document.getElementById("botonAsistentes");
-
-        console.log(botonEvento)
 
         botonEvento.addEventListener("click", function(){
 

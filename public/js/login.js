@@ -13,26 +13,26 @@ function addListenerForm() {
 }
 
 function enviaForm(formElement) {
-  let formData = new FormData(formElement);
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      let respuesta = JSON.parse(this.responseText);
-      showMessage(respuesta);
-    }
-  };
-  xhttp.open("POST", "login.php", true);
-  xhttp.send(formData);
+    let formData = new FormData(formElement);
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let respuesta = JSON.parse(this.responseText);
+        showMessage(respuesta);
+      }
+    };
+    xhttp.open("POST", "login.php", true);
+    xhttp.send(formData);
 }
 
-function showMessage(message) {
-if (message.mensaje == 1) {
-  window.setTimeout(function () {
-    window.location.href = "listar_eventos.html";
-    }, 1000);
-}else {
-  let lead = document.getElementsByClassName("lead");
-  lead[0].innerHTML = "-- login invalido --";
-  lead[0].setAttribute("class", "lead text-danger");
-}
-}
+  function showMessage(message) {
+    if (message.mensaje == 1) {
+      window.setTimeout(function () {
+        window.location.href = "listar_eventos.html";
+        }, 1000);
+    }else {
+      let lead = document.getElementsByClassName("lead");
+      lead[0].innerHTML = "-- login invalido --";
+      lead[0].setAttribute("class", "lead text-danger");
+    }
+  }
