@@ -13,8 +13,8 @@ function main() {
         const xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
-
-                crearTabla(JSON.parse(this.responseText));
+                crearTablaHead(JSON.parse(this.responseText));
+                crearTablaBody(JSON.parse(this.responseText));
 
             }else if (this.status == 403) {
                 
@@ -29,9 +29,9 @@ function main() {
     }
 
 
-    function crearTabla(infoEventos) {
+    function crearTablaBody(infoEventos) {
 
-        let tabla = document.getElementById("tabla");
+        let tabla = document.getElementById("tablaBody");
         tabla.innerHTML = " ";
 
         for (value in infoEventos) {
@@ -51,6 +51,27 @@ function main() {
         }
     }
 
+    function crearTablaHead(infoEventos) {
+
+        let tabla = document.getElementById("tablaHead");
+        tabla.innerHTML = " ";
+        let fila = document.createElement("tr");
+        for (value in infoEventos[0]) {
+
+           
+
+
+          
+
+                let campo = document.createElement("th");
+                campo.innerHTML = value;
+
+                fila.appendChild(campo);
+            
+            tabla.appendChild(fila);
+
+        }
+    }
 
 
     function cargarDatosAdmins() {
@@ -59,7 +80,8 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                crearTabla(JSON.parse(this.responseText));
+                crearTablaHead(JSON.parse(this.responseText));
+                crearTablaBody(JSON.parse(this.responseText));
 
             }else if (this.status == 403) {
                 
@@ -85,8 +107,8 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
 
-                crearTabla(JSON.parse(this.responseText));
-
+                crearTablaHead(JSON.parse(this.responseText));
+                crearTablaBody(JSON.parse(this.responseText));
             }else if (this.status == 403) {
                 
                 window.location.href = "./login.html";

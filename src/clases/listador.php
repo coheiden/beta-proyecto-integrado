@@ -10,7 +10,7 @@ class listador extends conexion
 
         if (sesion::comprobarSesion() == true) {
 
-            $sql = 'SELECT id_administrador, nombre_usuario, correos from administrador';
+            $sql = 'SELECT id_administrador, nombre_usuario, correo from administrador';
             $result = $this->connect()->query($sql);
             if ($result) {
                 $listadoAdmins = $result->fetch_all(MYSQLI_ASSOC);
