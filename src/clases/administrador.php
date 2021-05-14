@@ -35,7 +35,6 @@ class administrador extends conexion
 
         } else {
             return false;
-
         }
 
     }
