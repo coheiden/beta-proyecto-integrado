@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", main());
+document.addEventListener("DOMContentLoaded", main);
 
 
 function main() {
 
-    // crearMenu();
+    cambiarTitulo();
     cargarDatosEventos();
 
 
@@ -48,93 +48,111 @@ function main() {
 
 
 
-    // function cambiarTitulo(){
+    function cargarDatosAdmins() {
 
-    //     let menu = document.getElementsByTagName("li")
-    //     console.log(menu)
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
 
-    //     let titulo = document.getElementById("titulo");
+                crearTablaAdmins(JSON.parse(this.responseText));
 
-    //     let botonEvento = document.getElementById("botonEventos");
-    //     let botonAdmins = document.getElementById("botonAdmins");
-    //     let botonAsistentes = document.getElementById("botonAsistentes");
+            }
+        });
 
-    //     console.log(botonEvento)
+        xhttp.open("GET", "admins.php", true);
+        xhttp.send();
 
-    //     // botonEvento.addEventListener("click", function(){
-
-    //     //     console.log("vculo")
-    //     //     cargarDatosEventos();
-    //     // })
-    // }
+    }
 
 
+    
+    function crearTablaAdmins(infoEventos) {
+
+        let tabla = document.getElementById("tabla");
+
+        for (value in infoEventos) {
+
+            let fila = document.createElement("tr");
+
+
+            for (valor in infoEventos[value]) {
+
+                let campo = document.createElement("td");
+                campo.innerHTML = infoEventos[value][valor];
+
+                fila.appendChild(campo);
+            }
+            tabla.appendChild(fila);
+
+        }
+    }
 
 
 
-    // function crearMenu() {
-        
-    //     evento = "Eventos";
-    //     admin = "Admins";
-    //     asistente = "Asistentes"
-
-    //     let array = [];
-
-    //     array.push(array, evento, admin, asistente);
 
 
-    //     let container = document.getElementById('contenedor')
 
-    //     console.log(container)
+    function cargarDatosAsistentes() {
 
-    //     let cabecera = document.createElement("div");
-    //     cabecera.setAttribute = "card bg-seconday p-3";
-    //     cabecera.style = "width: 15rem";
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
 
-    //     let menuCabecera = document.createElement("div");
-    //     menuCabecera.setAttribute = "card-header fs-4 fst-italic border border-primary rounded text-center"
-    //     menuCabecera.innerHTML = "Menu";
+                crearTablaAsistentes(JSON.parse(this.responseText));
 
-    //     cabecera.appendChild(menuCabecera);
+            }
+        });
 
-    //     let ul = document.createElement("ul");
-    //     ul.setAttribute = "list-group list-group-flush ";
+        xhttp.open("GET", "asistentes.php", true);
+        xhttp.send();
 
-    //     cabecera.appendChild(ul)
+    }
 
-    //     for(i = 0 ; i <= 3; i++){
 
-    //         let liPrincipal = document.createElement("li");
-    //         liPrincipal.setAttribute = "list-group-item fs-5";
-    //         liPrincipal.innerHTML = array[i]
+    function crearTablaAsistentes(infoEventos) {
 
-    //             liPrincipal.addEventListener("click", function(){
+        let tabla = document.getElementById("tabla");
 
-    //                 if(liPrincipal.innerHTML == "Eventos"){
-    //                     cargarDatosEventos();
+        for (value in infoEventos) {
 
-    //                 }else if(liPrincipal == "Admins"){
+            let fila = document.createElement("tr");
 
-    //                     console.log("tabla Admisn")
 
-    //                 }else if(liPrincipal == "Asistentes"){
+            for (valor in infoEventos[value]) {
 
-    //                     console.log("tabla Asistentes")
+                let campo = document.createElement("td");
+                campo.innerHTML = infoEventos[value][valor];
 
-    //                 }
+                fila.appendChild(campo);
+            }
+            tabla.appendChild(fila);
 
-    //             })
+        }
+    }
 
-    //         ul.appendChild(liPrincipal)
 
-    //         let liInferior = document.createElement("li");
 
-    //         liInferior.setAttribute = "list-group-item fs-6 font-monospace border-bottom border-dark"
-            
-    //         ul.appendChild(liInferior)
+    function cambiarTitulo(){
 
-    //     }
+        let botonEvento = document.getElementById("botonEventos");
+        let botonAdmins = document.getElementById("botonAdmins");
+        let botonAsistentes = document.getElementById("botonAsistentes");
 
-        // container.appendChild(cabecera)
-    // }
+        console.log(botonEvento)
+
+        botonEvento.addEventListener("click", function(){
+
+            cargarDatosEventos();
+        })
+
+        botonAdmins.addEventListener("click", function(){
+
+            cargarDatosAdmins();
+        })
+
+        botonAsistentes.addEventListener("click", function(){
+
+            cargarDatosAsistentes();
+        })
+    }
 }
