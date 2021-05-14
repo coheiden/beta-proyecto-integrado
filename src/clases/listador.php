@@ -15,7 +15,7 @@ class listador extends conexion
             // if ($result) {
                 $listadoAdmins = $result->fetch_all();
                 return $listadoAdmins;
-            };
+            }
             
         // }else{
 
