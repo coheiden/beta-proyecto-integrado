@@ -16,6 +16,10 @@ function main() {
 
                 crearTabla(JSON.parse(this.responseText));
 
+            }else if (this.status == 403) {
+                
+                window.location.href = "./login.html";
+
             }
         });
 
@@ -28,6 +32,7 @@ function main() {
     function crearTabla(infoEventos) {
 
         let tabla = document.getElementById("tabla");
+        tabla.innerHTML = " ";
 
         for (value in infoEventos) {
 
@@ -56,6 +61,10 @@ function main() {
 
                 crearTabla(JSON.parse(this.responseText));
 
+            }else if (this.status == 403) {
+                
+                window.location.href = "./login.html";
+
             }
         });
 
@@ -77,6 +86,10 @@ function main() {
             if (this.readyState == 4 && this.status == 200) {
 
                 crearTabla(JSON.parse(this.responseText));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "./login.html";
 
             }
         });

@@ -10,7 +10,7 @@ class listador extends conexion
 
         if (sesion::comprobarSesion() == true) {
 
-            $sql = 'SELECT id_administrador, nombre_usuario, correo from administrador';
+            $sql = 'SELECT id_administrador, nombre_usuario, correos from administrador';
             $result = $this->connect()->query($sql);
             if ($result) {
                 $listadoAdmins = $result->fetch_all(MYSQLI_ASSOC);
@@ -33,16 +33,12 @@ class listador extends conexion
             if ($result) {
                 
             $listadoEventos = $result->fetch_all(MYSQLI_ASSOC);
-            //print_r($listadoEventos);
             return $listadoEventos;
-            print_r($listadoEventos);
             };
             
         }else{
 
-           //header("location: ./caca.html");
-            //echo 'window.location.href = "./login.html"';
-
+            return http_response_code(403);
 
         }
 
@@ -62,7 +58,7 @@ class listador extends conexion
             
         }else{
 
-            throw new Exception("ERROR");
+            return http_response_code(403);
 
         }
     }
