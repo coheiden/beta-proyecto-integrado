@@ -8,6 +8,7 @@ class administrador extends conexion
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> e95a254e2d3e425ce5f2c12762872e5a9f961a3d
@@ -16,6 +17,8 @@ class administrador extends conexion
 
 >>>>>>> 88b956c28f87b23b3ed5525c4481278e160b8045
 >>>>>>> 1b1ae92eb2425667326e5e190a11eecf2970f427
+=======
+>>>>>>> 7ac221d7726a4d78d5c7532fffe78e9b88e83710
         $sql = 'SELECT * from administrador where nombre_usuario = "' . $usuario . '"';
         //echo $sql;
         $result = $this->connect()->query($sql);
@@ -47,6 +50,7 @@ class administrador extends conexion
             return false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> e95a254e2d3e425ce5f2c12762872e5a9f961a3d
@@ -55,6 +59,8 @@ class administrador extends conexion
 =======
 >>>>>>> 88b956c28f87b23b3ed5525c4481278e160b8045
 >>>>>>> 1b1ae92eb2425667326e5e190a11eecf2970f427
+=======
+>>>>>>> 7ac221d7726a4d78d5c7532fffe78e9b88e83710
         }
 
     }
