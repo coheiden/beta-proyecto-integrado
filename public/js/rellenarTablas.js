@@ -107,13 +107,10 @@ function main() {
         let botonAdmins = document.getElementById("botonAdmins");
         let botonAsistentes = document.getElementById("botonAsistentes");
 
-<<<<<<< HEAD
+
         console.log(botonEventos);
 
         botonEventos.addEventListener("click", function(){
-=======
-        botonEvento.addEventListener("click", function(){
->>>>>>> 53127b3f1476090687c23c9f5c85946c7b1ec9f4
 
             let titulo = document.getElementById("titulo")
             titulo.innerHTML = "Eventos"
