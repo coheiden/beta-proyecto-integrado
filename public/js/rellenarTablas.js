@@ -140,7 +140,7 @@ function main() {
 
         console.log(botonEvento)
 
-        botonEvento.addEventListener("click", function(){
+        botonEventos.addEventListener("click", function(){
 
             cargarDatosEventos();
         })
