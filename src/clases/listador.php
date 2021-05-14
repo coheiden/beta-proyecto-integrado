@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 class listador extends conexion
 {
@@ -13,7 +13,7 @@ class listador extends conexion
             $sql = 'SELECT id_administrador, nombre_usuario, correo from administrador';
             $result = $this->connect()->query($sql);
             if ($result) {
-                $listadoAdmins = $result->fetch_all();
+                $listadoAdmins = $result->fetch_all(MYSQLI_ASSOC);
                 return $listadoAdmins;
             };
             
@@ -31,13 +31,17 @@ class listador extends conexion
             $sql = 'SELECT id_acto, id_administrador, nombre,fecha_hora  from acto';
             $result = $this->connect()->query($sql);
             if ($result) {
-            $listadoEventos = $result->fetch_all();
+                
+            $listadoEventos = $result->fetch_all(MYSQLI_ASSOC);
+            //print_r($listadoEventos);
             return $listadoEventos;
+            print_r($listadoEventos);
             };
             
         }else{
 
-            throw new Exception("ERROR");
+           //header("location: ./caca.html");
+            //echo 'window.location.href = "./login.html"';
 
 
         }
@@ -51,7 +55,7 @@ class listador extends conexion
             $sql = 'SELECT id_asistente, dni, nombre, correo from asistente';
             $result = $this->connect()->query($sql);
             if ($result) {
-                $listadoAsistentes = $result->fetch_all();
+                $listadoAsistentes = $result->fetch_all(MYSQLI_ASSOC);
 
                 return $listadoAsistentes;
             };
