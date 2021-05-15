@@ -28,7 +28,7 @@ function enviaForm(formElement) {
   function showMessage(message) {
     if (message.mensaje == 1) {
       window.setTimeout(function () {
-        window.location.href = "listar_eventos.html";
+        window.location.href = "index.html";
         }, 1000);
     }else {
       let lead = document.getElementsByClassName("lead");
