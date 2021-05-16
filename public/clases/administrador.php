@@ -31,6 +31,7 @@ class administrador extends conexion
 
             session_start();
             $_SESSION["user_id"] = $infoUser["id_administrador"];
+            $_SESSION["user_name"] = $infoUser["nombre_usuario"];
             return true;
 
         } else {

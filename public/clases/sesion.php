@@ -15,4 +15,19 @@ class sesion{
         }
 
     }
+
+
+    public static function usuario(){
+
+        if (isset($_SESSION["user_name"])) {
+
+            return $_SESSION["user_name"];
+
+        }else{
+
+            return false;
+
+        }
+
+    }
 }

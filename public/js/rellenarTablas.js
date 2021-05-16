@@ -5,6 +5,7 @@ function main() {
 
     cargarDatosEventos();
     cambiarTitulo();
+    cargarDatosUser();
 
 
 
@@ -149,5 +150,40 @@ function main() {
 
             cargarDatosAsistentes();
         })
+    }
+
+
+
+    function cargarDatosUser() {
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                console.log(escribirUser(JSON.parse(this.responseText)));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "./login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "usuario.php", true);
+        xhttp.send();
+
+    }
+
+
+    function escribirUser(){
+
+        let usuario = document.getElementById("usuario");
+        let span = document.createElement("span");
+
+        span.innerHTML = '<?php echo $SESSION["user_name"]?>'
+
+
+        usuario.appendChild(span);
+
     }
 }

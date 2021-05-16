@@ -19,7 +19,7 @@ class listador extends conexion
             
         }else{
 
-            header("location:../login.html");
+            return http_response_code(403);
 
         }
     }
