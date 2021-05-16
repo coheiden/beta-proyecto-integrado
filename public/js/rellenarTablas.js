@@ -14,7 +14,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
+                crearTablaBody(JSON.parse(this.responseText), );
 
             }else if (this.status == 403) {
                 
