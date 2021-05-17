@@ -104,7 +104,7 @@
 
         a_inicio.addEventListener("click", function(){
             
-            cargarDatosEventos(0);
+            cargarDatos(0,"eventos");
             
 
         })
@@ -119,7 +119,7 @@
 
             a_simple.addEventListener("click", function(){
 
-                cargarDatosEventos(i);
+                cargarDatos(i,"eventos");
 
             })
 
@@ -140,7 +140,7 @@
 
         a_final.addEventListener("click", function(){
 
-            cargarDatosEventos(total - 1);
+            cargarDatos(total - 1,"eventos");
 
         })
         a_final.appendChild(span_laquao2);
@@ -172,7 +172,7 @@
 
         a_inicio.addEventListener("click", function(){
             
-            cargarDatosAdmins(0);
+            cargarDatos(0,"admins");
             
 
         })
@@ -187,7 +187,7 @@
 
             a_simple.addEventListener("click", function(){
 
-                cargarDatosAdmins(i);
+                cargarDatos(i,"admins");
 
             })
 
@@ -208,7 +208,7 @@
 
         a_final.addEventListener("click", function(){
 
-            cargarDatosAdmins(total - 1);
+            cargarDatos(total - 1,"admins");
 
         })
         a_final.appendChild(span_laquao2);
@@ -245,7 +245,7 @@
 
         a_inicio.addEventListener("click", function(){
             
-            cargarDatosAsistentes(0);
+            cargarDatos(0,"asistentes");
             
 
         })
@@ -260,7 +260,7 @@
 
             a_simple.addEventListener("click", function(){
 
-                cargarDatosAsistentes(i);
+                cargarDatos(i,"asistentes");
 
             })
 
@@ -281,7 +281,7 @@
 
         a_final.addEventListener("click", function(){
             
-            cargarDatosAsistentes(total - 1);
+            cargarDatos(total - 1,"asistentes");
             
 
         })

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", main);
 function main() {
 
 // Estas 3 funciones deben ejecutarse si o si para que la aplicacion funcione correctamente en la primera carga.
-    cargarDatosEventos(0);
+    cargarDatos(0,"eventos");
     cambiarTitulo();
     cargarDatosUsuario();
 
@@ -77,21 +77,21 @@ function cambiarTitulo(){
 
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Eventos"
-        cargarDatosEventos(0);
+        cargarDatos(0,"eventos");
     })
 
     botonAdmins.addEventListener("click", function(){
 
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Admins"
-        cargarDatosAdmins(0);
+        cargarDatos(0,"admins");
     })
 
     botonAsistentes.addEventListener("click", function(){
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Asistentes"
 
-        cargarDatosAsistentes(0);
+        cargarDatos(0,"asistentes");
     })
 }
 
@@ -154,9 +154,9 @@ function escribirUser(valor){
 
     }
 
-// Peticion que recibe los datos de la tabla eventos, actos en la bbdd
+// Peticion que recibe los datos de las tablas en la bbdd, "admins", "eventos" y "asistentes"
 
-    function cargarDatosEventos(pagina) {
+    function cargarDatos(pagina,source) {
 
         const xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", function () {
@@ -173,59 +173,7 @@ function escribirUser(valor){
             }
         });
     
-        xhttp.open("GET", "../src/eventos.php?pagina="+pagina, true);
-        xhttp.send();
-    
-    }
-
-
-// Esta peticion es identica a la anterior pero carga los datos de la tabla Asistentes
-    function cargarDatosAsistentes(pagina) {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-    
-                crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
-                cargarTotalDatosAsistentes()
-    
-    
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-    
-            }
-        });
-    
-        xhttp.open("GET", "../src/asistentes.php?pagina="+pagina, true);
-        xhttp.send();
-    
-    }
-
-
-// Tercera de este grupo para recabar la información de las tres tablas de la base de datos.
-
-
-    function cargarDatosAdmins(pagina) {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-    
-                crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
-                cargarTotalDatosAdmins()
-    
-    
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-    
-            }
-        });
-    
-        xhttp.open("GET", "../src/admins.php?pagina="+pagina, true);
+        xhttp.open("GET", "../src/"+source+".php?pagina="+pagina, true);
         xhttp.send();
     
     }
