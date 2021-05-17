@@ -39,7 +39,15 @@ function main() {
 
             let fila = document.createElement("tr");
 
+            let id = (infoEventos[value]["id_acto"]);
 
+            fila.addEventListener("click", function (e) {
+                //e.cancelBubble = true;
+                fila = e.target.parentNode;
+                //fila.parentNode.removeChild(tr);
+                mostrarDetalle(id);
+                
+              });
             for (valor in infoEventos[value]) {
 
                 let campo = document.createElement("td");
@@ -186,4 +194,19 @@ function main() {
         usuario.appendChild(span);
 
     }
+
+    function mostrarDetalle(id) {
+
+        console.log(id);
+
+        divDetalle = document.getElementById("detalle");
+        botonCerrar = document.getElementById("botonCerrar");
+
+        botonCerrar.addEventListener("click", function () {
+        divDetalle.style.display = "none";
+        });
+
+
+        divDetalle.style.display = "block";
+      }
 }
