@@ -26,11 +26,10 @@ function cargarDatosEventos(pagina) {
         }
     });
 
-    xhttp.open("GET", "eventos.php?pagina="+pagina, true);
+    xhttp.open("GET", "../src/eventos.php?pagina="+pagina, true);
     xhttp.send();
 
 }
-
 
 function crearTablaBody(infoEventos) {
 
@@ -93,12 +92,12 @@ function cargarDatosAdmins(pagina) {
 
         }else if (this.status == 403) {
             
-            window.location.href = "./login.html";
+            window.location.href = "../login.html";
 
         }
     });
 
-    xhttp.open("GET", "admins.php?pagina="+pagina, true);
+    xhttp.open("GET", "../src/admins.php?pagina="+pagina, true);
     xhttp.send();
 
 }
@@ -117,12 +116,12 @@ function cargarDatosAsistentes(pagina) {
 
         }else if (this.status == 403) {
             
-            window.location.href = "./login.html";
+            window.location.href = "../login.html";
 
         }
     });
 
-    xhttp.open("GET", "asistentes.php?pagina="+pagina, true);
+    xhttp.open("GET", "../src/asistentes.php?pagina="+pagina, true);
     xhttp.send();
 
 }
@@ -168,12 +167,12 @@ function cargarDatosUsuario(){
 
         }else if (this.status == 403) {
             
-            window.location.href = "./login.html";
+            window.location.href = "../login.html";
 
         }
     });
 
-    xhttp.open("GET", "usuario.php", true);
+    xhttp.open("GET", "../src/usuario.php", true);
     xhttp.send();
 
 }

@@ -21,7 +21,7 @@ function enviaForm(formElement) {
         showMessage(respuesta);
       }
     };
-    xhttp.open("POST", "login.php", true);
+    xhttp.open("POST", "../src/login.php", true);
     xhttp.send(formData);
 }
 

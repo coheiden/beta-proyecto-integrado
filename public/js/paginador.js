@@ -10,12 +10,12 @@
 
             }else if (this.status == 403) {
                 
-                window.location.href = "./login.html";
+                window.location.href = "../login.html";
 
             }
         });
 
-        xhttp.open("GET", "./total_eventos.php", true);
+        xhttp.open("GET", "../src/total_eventos.php", true);
         xhttp.send();
 
     }
@@ -94,18 +94,16 @@
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 
-                console.log(this.responseText)
-                
                 botonesPaginadorAdmin(JSON.parse(this.responseText));
 
             }else if (this.status == 403) {
                 
-                window.location.href = "./login.html";
+                window.location.href = "../login.html";
 
             }
         });
 
-        xhttp.open("GET", "./total_admins.php", true);
+        xhttp.open("GET", "../src/total_admins.php", true);
         xhttp.send();
 
     }
@@ -187,12 +185,12 @@
 
             }else if (this.status == 403) {
                 
-                window.location.href = "./login.html";
+                window.location.href = "../login.html";
 
             }
         });
 
-        xhttp.open("GET", "./total_asistentes.php", true);
+        xhttp.open("GET", "../src/total_asistentes.php", true);
         xhttp.send();
 
     }
