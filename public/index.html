@@ -97,14 +97,29 @@
   </div>
 </div>
 <div id="detalle">
-  <div class="modal-dialog">
+  <div>
     <div class="modal-content">
       <div class="modal-header">
-        <h5 id="detalleTitulo" class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 id="detalleNombre" class="modal-title">Modal title</h5>
         <button id="botonCerrar" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <table class="table">
+          <thead class="table-primary rounded">
+            <tr><td>ID</td><td>ID Admin</td><td>Direccion</td><td>Inicio</td><td>Ocupadas</td><td>Plazas Totales</td></tr>
+          </thead>
+          <tbody id="detalleBody">
+            <tr><td>ID</td><td>ID Admin</td><td>Direccion</td><td>Inicio</td><td>Ocupadas</td><td>Plazas Totales</td></tr>
+          </tbody>
+        </table>
+        <table class="table">
+          <thead class="table-primary rounded">
+            <tr><td>Descripcion</td></tr>
+          </thead>
+          <tbody>
+            <tr><td id="detalleDescripcion">Descripcion</td></tr>
+          </tbody>
+        </table>
       </div>
       <div class="modal-footer">
         <button id="botonModificar" type="button" class="btn btn-primary">Modificar</button>

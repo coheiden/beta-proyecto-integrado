@@ -139,4 +139,25 @@ class listador extends conexion
         }
     }
 
+    public function detalleEventos($id){
+
+        if (sesion::comprobarSesion() == true) {
+
+            $sql = "SELECT id_acto, id_administrador, direccion, fecha_hora, plazas_ocupadas, plazas_totales, nombre, descripcion  FROM acto WHERE id_acto LIKE $id";
+
+            $result = $this->connect()->query($sql);
+            if ($result) {
+                
+            $listadoEventos = $result->fetch_assoc();
+            return $listadoEventos;
+            };
+            
+        }else{
+
+            return http_response_code(403);
+
+        }
+
+    }
+
 }
