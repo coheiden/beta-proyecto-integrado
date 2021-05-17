@@ -120,3 +120,7 @@ body {
 .click{
   cursor: pointer;
 }
+
+.click:hover{
+  color:#9c9c9c;
+}
