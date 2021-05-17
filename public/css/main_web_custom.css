@@ -116,3 +116,7 @@ body {
 .logo-1 {
   font-weight: 300;
 }
+
+.click{
+  cursor: pointer;
+}

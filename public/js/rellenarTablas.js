@@ -5,6 +5,7 @@ function main() {
 
     cargarDatosEventos();
     cambiarTitulo();
+    cargarDatosUser();
 
 
 
@@ -14,7 +15,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
+                crearTablaBody(JSON.parse(this.responseText), );
 
             }else if (this.status == 403) {
                 
@@ -152,5 +153,40 @@ function main() {
 
             cargarDatosAsistentes();
         })
+    }
+
+
+
+    function cargarDatosUser() {
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                escribirUser(JSON.parse(this.responseText));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "./login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "usuario.php", true);
+        xhttp.send();
+
+    }
+
+
+    function escribirUser(valor){
+
+        let usuario = document.getElementById("usuario");
+        let span = document.createElement("span");
+
+        span.innerHTML = valor["usuario"];
+
+
+        usuario.appendChild(span);
+
     }
 }

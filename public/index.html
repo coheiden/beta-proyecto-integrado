@@ -36,8 +36,9 @@
  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
  </svg>
     </div>
-    <div class="col-4">
-      $POst["user"]
+    <div class="col-4" id="usuario">
+      
+      
     </div>
     <div class="col-6">
       <a class="nav fw-bold text-decoration-none" href="#">Cerrar Sesion</a>
@@ -68,14 +69,13 @@
           Menu
         </div>
         <ul class="list-group list-group-flush " id="menu">
-          <li class="list-group-item fs-5" id="botonEventos">Eventos</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir evento</li>
-          <li class="list-group-item fs-5" id="botonAdmins">Admins</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Admin</li>
-          <li class="list-group-item fs-5" id="botonAsistentes" >Asistentes</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark">Añadir Asistente</li>
-
-        </ul>
+          <li class="list-group-item fs-5 click" id="botonEventos">Eventos</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir evento</li>
+         <li class="list-group-item fs-5 click"  id="botonAdmins">Admin</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir Admin</li>
+          <li class="list-group-item fs-5 click" id="botonAsistentes" >Asistentes</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir Asistente</li>
+        </ul>   
       </div>
 
 
@@ -103,6 +103,32 @@
 
       </tbody>
     </table>
+
+    <!-- PAGINADOR -->
+
+    <div id="paginador">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination" id="ul-paginador">
+
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
   </main>
 
 </div>

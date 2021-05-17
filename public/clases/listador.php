@@ -19,7 +19,7 @@ class listador extends conexion
             
         }else{
 
-            header("location:../login.html");
+            return http_response_code(403);
 
 <<<<<<< HEAD
         // }
@@ -29,11 +29,12 @@ class listador extends conexion
     }
 >>>>>>> 53127b3f1476090687c23c9f5c85946c7b1ec9f4
 
-    public function listarEventos(){
+    public function listarEventos($limite){
+
 
         if (sesion::comprobarSesion() == true) {
 
-            $sql = 'SELECT id_acto, id_administrador, nombre,fecha_hora  from acto';
+            $sql = 'SELECT id_acto, id_administrador, nombre,fecha_hora  from acto LIMIT ' $limite;
             $result = $this->connect()->query($sql);
             if ($result) {
                 
