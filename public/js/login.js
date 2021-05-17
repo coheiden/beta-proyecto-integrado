@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", main);
 
 function main() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   enviaForm();
-=======
-=======
->>>>>>> 53127b3f1476090687c23c9f5c85946c7b1ec9f4
+
   addListenerForm();
 }
 
@@ -16,10 +13,7 @@ function addListenerForm() {
     e.preventDefault();
     enviaForm(e.currentTarget);
   });
-<<<<<<< HEAD
->>>>>>> 7ac221d7726a4d78d5c7532fffe78e9b88e83710
-=======
->>>>>>> 53127b3f1476090687c23c9f5c85946c7b1ec9f4
+
 }
 
 function enviaForm(formElement) {
