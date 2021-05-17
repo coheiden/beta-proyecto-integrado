@@ -5,7 +5,7 @@ function main() {
 
     cargarDatosEventos(0);
     cambiarTitulo();
-    cargarDatosUser();
+    cargarDatosUsuario();
 
 }
 
@@ -50,7 +50,6 @@ function crearTablaBody(infoEventos) {
                 mostrarDetalle(id);
                 
               });
-            for (valor in infoEventos[value]) {
 
         for (valor in infoEventos[value]) {
 
@@ -61,7 +60,7 @@ function crearTablaBody(infoEventos) {
         }
         tabla.appendChild(fila);
 
-    }
+}
 }
 
 function crearTablaHead(infoEventos) {
@@ -159,7 +158,7 @@ function cambiarTitulo(){
 }
 
 
-function cargarDatosUser() {
+function cargarDatosUsuario(){
 
     const xhttp = new XMLHttpRequest();
     xhttp.addEventListener("readystatechange", function () {
@@ -205,4 +204,4 @@ function escribirUser(valor){
 
         divDetalle.style.display = "block";
       }
-}
+
