@@ -4,7 +4,7 @@ include_once "autoload.php";
 
 
 $listador = new listador();
-echo json_encode($listador->listarEventos());
+echo json_encode($listador->listarEventos($_GET["limite"]));
 
 
 

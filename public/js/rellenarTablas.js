@@ -160,7 +160,7 @@ function main() {
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 
-                console.log(escribirUser(JSON.parse(this.responseText)));
+                escribirUser(JSON.parse(this.responseText));
 
             }else if (this.status == 403) {
                 
@@ -175,12 +175,12 @@ function main() {
     }
 
 
-    function escribirUser(){
+    function escribirUser(valor){
 
         let usuario = document.getElementById("usuario");
         let span = document.createElement("span");
 
-        span.innerHTML = '<?php echo $SESSION["user_name"]?>'
+        span.innerHTML = valor["usuario"];
 
 
         usuario.appendChild(span);

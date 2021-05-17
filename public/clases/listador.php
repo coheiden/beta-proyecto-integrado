@@ -24,11 +24,12 @@ class listador extends conexion
         }
     }
 
-    public function listarEventos(){
+    public function listarEventos($limite){
+
 
         if (sesion::comprobarSesion() == true) {
 
-            $sql = 'SELECT id_acto, id_administrador, nombre,fecha_hora  from acto';
+            $sql = 'SELECT id_acto, id_administrador, nombre,fecha_hora  from acto LIMIT ' $limite;
             $result = $this->connect()->query($sql);
             if ($result) {
                 
