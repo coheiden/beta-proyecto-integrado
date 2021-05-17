@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
     <script type="text/javascript" src="./js/rellenarTablas.js"></script>
+    <script type="text/javascript" src="./js/paginador.js"></script>
+
 
     <link href="./css/main_web_custom.css" rel="stylesheet">
 
@@ -19,10 +21,7 @@
         <span class="logo logo-1">EVENT
         <span class="logo logo-2">MAKER</span></span> 
       </span>
-      
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon bg-dark"></span>
-      </button>
+
    
   
 
@@ -41,19 +40,10 @@
       
     </div>
     <div class="col-6">
-      <a class="nav fw-bold text-decoration-none" href="#">Cerrar Sesion</a>
+      <a class="nav fw-bold text-decoration-none" href="./cerrar_sesion.php">Cerrar Sesion</a>
     </div>
   </div>
 </div>
-
-
-
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <span class="nav-link">Sign out</span>
-
-        </li>
-      </ul>
     </header>
 
 
@@ -104,38 +94,35 @@
       </tbody>
     </table>
 
-    <!-- PAGINADOR -->
-
-    <div id="paginador">
+    <!-- PLANTILLA PAGINADOR -->
       <nav aria-label="Page navigation example">
-        <ul class="pagination" id="ul-paginador">
+        <ul class="pagination justify-content-center" id="ul-paginador">
 
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-
-
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-
-          </li>
         </ul>
       </nav>
-    </div>
   </main>
 
 </div>
 
-
-    <!-- Fin de la tabla inicio de los scripts -->
   </div>
+</div>
+<div id="detalle">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="detalleTitulo" class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button id="botonCerrar" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button id="botonModificar" type="button" class="btn btn-primary">Modificar</button>
+      </div>
+    </div>
+  </div>
+
+
 </div>
   </body>
 </html>

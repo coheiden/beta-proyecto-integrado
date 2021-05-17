@@ -3,8 +3,8 @@
 include_once "autoload.php";
 
 
-$eventos = new listador();
-echo json_encode($eventos->listarAdmins());
+$listador = new listador();
+echo json_encode($listador->listarAdmins($_GET["pagina"]));
 
 
 
