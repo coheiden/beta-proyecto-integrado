@@ -43,6 +43,7 @@
 
         a_inicio.addEventListener("click", function(){
             
+            cargarDatosEventos(0);
             
 
         })
@@ -76,7 +77,11 @@
 
         li_final.appendChild(a_final);
 
+        a_final.addEventListener("click", function(){
 
+            cargarDatosEventos(total - 1);
+
+        })
         a_final.appendChild(span_laquao2);
         ul.appendChild(li_final);
 
@@ -126,6 +131,7 @@
 
         a_inicio.addEventListener("click", function(){
             
+            cargarDatosAdmins(0);
             
 
         })
@@ -159,7 +165,11 @@
 
         li_final.appendChild(a_final);
 
+        a_final.addEventListener("click", function(){
 
+            cargarDatosAdmins(total - 1);
+
+        })
         a_final.appendChild(span_laquao2);
         ul.appendChild(li_final);
 
@@ -213,6 +223,7 @@
 
         a_inicio.addEventListener("click", function(){
             
+            cargarDatosAsistentes(0);
             
 
         })
@@ -246,6 +257,12 @@
 
         li_final.appendChild(a_final);
 
+        a_final.addEventListener("click", function(){
+            
+            cargarDatosAsistentes(total - 1);
+            
+
+        })
 
         a_final.appendChild(span_laquao2);
         ul.appendChild(li_final);
