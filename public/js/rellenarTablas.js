@@ -41,6 +41,16 @@ function crearTablaBody(infoEventos) {
 
         let fila = document.createElement("tr");
 
+            let id = (infoEventos[value]["id_acto"]);
+
+            fila.addEventListener("click", function (e) {
+                //e.cancelBubble = true;
+                fila = e.target.parentNode;
+                //fila.parentNode.removeChild(tr);
+                mostrarDetalle(id);
+                
+              });
+            for (valor in infoEventos[value]) {
 
         for (valor in infoEventos[value]) {
 
@@ -149,7 +159,6 @@ function cambiarTitulo(){
 }
 
 
-
 function cargarDatosUser() {
 
     const xhttp = new XMLHttpRequest();
@@ -182,4 +191,18 @@ function escribirUser(valor){
 
 }
 
+    function mostrarDetalle(id) {
 
+        console.log(id);
+
+        divDetalle = document.getElementById("detalle");
+        botonCerrar = document.getElementById("botonCerrar");
+
+        botonCerrar.addEventListener("click", function () {
+        divDetalle.style.display = "none";
+        });
+
+
+        divDetalle.style.display = "block";
+      }
+}
