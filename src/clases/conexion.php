@@ -1,6 +1,10 @@
 <?php
+
+// Clase abstracta que sirve para crear la conexion con la BBDD mediante un fichero conf.csv con los datos del mismo
+
 abstract class conexion
 {
+
     private $servername;
     private $username;
     private $password;

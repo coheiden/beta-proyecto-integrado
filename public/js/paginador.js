@@ -1,5 +1,15 @@
 
 
+
+// LAS FUNCIONES QUE IMPLEMENTA ESTE JS SON EXCLUSIVAMENTE PARA EL PAGINADOR DE LAS TABLAS.
+
+
+// PETICIONES ASINCRONAS QUE DEVUELVEN LA CANTIDAD DE REGISTROS QUE HAY POR CADA TABLA DE LA BBDD
+
+// Estas peticiones simplemente devuelven el numero total de datos que hay en cada tabla
+// Cada una de esas 3 funciones devuelve el valor con la cantidad de datos
+
+
     function cargarTotalDatosEventos() {
 
         const xhttp = new XMLHttpRequest();
@@ -19,6 +29,57 @@
         xhttp.send();
 
     }
+
+
+    function cargarTotalDatosAdmins() {
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                botonesPaginadorAdmin(JSON.parse(this.responseText));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "../login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "../src/total_admins.php", true);
+        xhttp.send();
+
+    }
+
+
+    
+    function cargarTotalDatosAsistentes() {
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                botonesPaginadorAsistentes(JSON.parse(this.responseText));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "../login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "../src/total_asistentes.php", true);
+        xhttp.send();
+
+    }
+
+
+
+// A PARTIR DE AQUI ES LA PARTE QUE HACE DE FRONTEND
+
+// ESTAS 3 FUNCIONES SON LAS QUE PINTAN CADA UNO DE LOS 3 PAGINADORES DISTINTOS EN LA WEB. 1 PAGIADOR POR CADA 1 DE LAS TABLAS
+
+// Dentro de cada una de las funciones llama a la funcion que pinta la tabla del rellenarTablas.js
 
 
 
@@ -88,25 +149,7 @@
     }   
 
 
-    function cargarTotalDatosAdmins() {
 
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-                
-                botonesPaginadorAdmin(JSON.parse(this.responseText));
-
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-
-            }
-        });
-
-        xhttp.open("GET", "../src/total_admins.php", true);
-        xhttp.send();
-
-    }
 
     function botonesPaginadorAdmin(total){
         
@@ -175,25 +218,6 @@
 
 
 
-    function cargarTotalDatosAsistentes() {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-                
-                botonesPaginadorAsistentes(JSON.parse(this.responseText));
-
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-
-            }
-        });
-
-        xhttp.open("GET", "../src/total_asistentes.php", true);
-        xhttp.send();
-
-    }
 
     function botonesPaginadorAsistentes(total){
         

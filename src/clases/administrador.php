@@ -3,6 +3,7 @@
 class administrador extends conexion
 {
 
+    // Funcion que retorna la informacion del usuario que esta seleccionado mediante SQL
     public function obtenerInfo($usuario)
     {
 
@@ -15,6 +16,8 @@ class administrador extends conexion
         };
 
     }
+
+    // Funcion imprescindible que comprueba los datos de POST y comprueba la PASSWORD y genera las variables de SESSION
 
     public function comprobarDatosPost($datosForm)
     {

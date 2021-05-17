@@ -1,0 +1,2 @@
+
+Las clases que se usan en el proyecto estan integradas en la carpeta de clases mientras que el resto de archivos PHP son archivos que retornan JSON'S que se usan para las peticiones asincronas en todos los JS

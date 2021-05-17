@@ -5,12 +5,19 @@ class listador extends conexion
 {
 
 
+// ESTAS FUNCIONES SON LAS QUE SE USAN PARA ENVIAR LA INFORMACION POR PETICION ASINCRONA AL JS
+// CADA UNA RETORNA LA INFORMACION DE CADA UNA DE LAS TABLAS SELECCIONADAS
+
 
     public function listarAdmins($pagina){
+
+        // Todas comprueban las sesion, en caso de que no exista sesion retorna un error que el js entiende y redirige al login para que genere las mismas
 
         if (sesion::comprobarSesion() == true) {
 
             $offset = $pagina * 10;
+
+            // El offset se usa para el paginador, de forma que retorna solo los datos que quiero para cada pagina de la tabla
 
             $sql = "SELECT id_administrador, nombre_usuario, correo from administrador LIMIT $offset, 10";
             $result = $this->connect()->query($sql);
@@ -71,6 +78,9 @@ class listador extends conexion
         }
     }
 
+
+// ESTAS 3 FUNCIONES DEVUELVEN LA CANTIDAD DE ELEMENTOS QUE HAY EN CADA TABLA DE LA BBDD 
+// Estas funciones al igual que las anteriores se llaman para realizar peticiones asincronas en js 
 
     public function totalEventos(){
 
