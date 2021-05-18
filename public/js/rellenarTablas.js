@@ -32,11 +32,9 @@ function crearTablaBody(infoEventos, source) {
                     //fila.parentNode.removeChild(tr);
                     mostrarDetalle(id);
                     
-                  });
+                });
                 
             }
-
-
 
         for (valor in infoEventos[value]) {
 
@@ -45,6 +43,29 @@ function crearTablaBody(infoEventos, source) {
 
             fila.appendChild(campo);
         }
+
+        if (source == "eventos") {
+
+            let campo = document.createElement("td");
+            campo.innerHTML = "añadir";
+            if (infoEventos[value]["plazas_libres"] == 0) {
+                campo.classList.add("disabled");
+                
+            }
+            campo.addEventListener("click", function (e) {
+                e.cancelBubble = true;
+                fila = e.target.parentNode;
+                //fila.parentNode.removeChild(tr);
+                inscribirAsistente(id);
+                
+            });
+
+            fila.appendChild(campo);
+            //console.log(infoEventos[value]["plazas_libres"]);
+        }
+
+
+
         tabla.appendChild(fila);
 
 }
@@ -52,7 +73,7 @@ function crearTablaBody(infoEventos, source) {
 
 // La 2º funcion que pinta la tabla , en concreto esta se encarga de pintar el header de la tabla
 
-function crearTablaHead(infoEventos) {
+function crearTablaHead(infoEventos, source) {
 
     let tabla = document.getElementById("tablaHead");
     tabla.innerHTML = " ";
@@ -66,6 +87,17 @@ function crearTablaHead(infoEventos) {
         tabla.appendChild(fila);
 
     }
+    if (source == "eventos") {
+        let campo = document.createElement("th");
+        campo.innerHTML = "inscribir";
+
+        fila.appendChild(campo);
+    
+    tabla.appendChild(fila);
+
+    }
+
+
 }
 
 
@@ -148,7 +180,7 @@ function escribirUser(valor){
                 let fila = document.createElement("tr");
         
                 for (valor in datos) {
-                    console.log(valor);
+                    //console.log(valor);
 
                     if (valor != "nombre" && valor != "descripcion") {
                         let campo = document.createElement("td");
@@ -206,7 +238,7 @@ function escribirUser(valor){
         const xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
-                crearTablaHead(JSON.parse(this.responseText));
+                crearTablaHead(JSON.parse(this.responseText),source);
                 crearTablaBody(JSON.parse(this.responseText),source);
                 cargarTotalDatosEventos()
     
