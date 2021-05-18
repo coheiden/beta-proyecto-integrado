@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", main);
 function main() {
 
 // Estas 3 funciones deben ejecutarse si o si para que la aplicacion funcione correctamente en la primera carga.
-    cargarDatosEventos(0);
+    cargarDatos(0,"eventos");
     cambiarTitulo();
     cargarDatosUsuario();
 
@@ -12,7 +12,7 @@ function main() {
 
 // La 1º funcion que pinta la tabla, esta se encarga de pintar el body de la tabla, la parte principal con los datos que reciben de la base de datos
 
-function crearTablaBody(infoEventos) {
+function crearTablaBody(infoEventos, source) {
 
     let tabla = document.getElementById("tablaBody");
     tabla.innerHTML = " ";
@@ -21,15 +21,22 @@ function crearTablaBody(infoEventos) {
 
         let fila = document.createElement("tr");
 
-            let id = (infoEventos[value]["id_acto"]);
 
-            fila.addEventListener("click", function (e) {
-                
-                fila = e.target.parentNode;
+            if (source == "eventos") {
 
-                mostrarDetalle(id);
+                let id = (infoEventos[value]["id_acto"]);
+
+                fila.addEventListener("click", function (e) {
+                    //e.cancelBubble = true;
+                    fila = e.target.parentNode;
+                    //fila.parentNode.removeChild(tr);
+                    mostrarDetalle(id);
+                    
+                  });
                 
-              });
+            }
+
+
 
         for (valor in infoEventos[value]) {
 
@@ -77,22 +84,21 @@ function cambiarTitulo(){
 
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Eventos"
-        cargarDatosEventos(0);
-        
+        cargarDatos(0,"eventos");
     })
 
     botonAdmins.addEventListener("click", function(){
 
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Admins"
-        cargarDatosAdmins(0);
+        cargarDatos(0,"admins");
     })
 
     botonAsistentes.addEventListener("click", function(){
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Asistentes"
 
-        cargarDatosAsistentes(0);
+        cargarDatos(0,"asistentes");
     })
 }
 
@@ -113,8 +119,46 @@ function escribirUser(valor){
 
     function mostrarDetalle(id) {
 
-        console.log(id);
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                dibujarDetalle(JSON.parse(this.responseText));
 
+            }else if (this.status == 403) {
+                
+                window.location.href = "../login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "../src/eventosDetalle.php?id="+id, true);
+        xhttp.send();
+
+        function dibujarDetalle(datos) {
+
+            //console.log(datos);
+            detalleBody = document.getElementById("detalleBody");
+            detalleNombre = document.getElementById("detalleNombre");
+            detalleDescripcion = document.getElementById("detalleDescripcion");
+            detalleBody.innerHTML = "";
+            detalleNombre.innerHTML = datos["nombre"];
+            detalleDescripcion.innerHTML = datos["descripcion"];
+
+                let fila = document.createElement("tr");
+        
+                for (valor in datos) {
+                    console.log(valor);
+
+                    if (valor != "nombre" && valor != "descripcion") {
+                        let campo = document.createElement("td");
+                        campo.innerHTML = datos[valor];
+            
+                        fila.appendChild(campo);
+                    }
+                }
+                detalleBody.appendChild(fila);
+        
         divDetalle = document.getElementById("detalle");
         botonCerrar = document.getElementById("botonCerrar");
 
@@ -125,7 +169,7 @@ function escribirUser(valor){
 
         divDetalle.style.display = "block";
       }
-
+    }
 
 
 
@@ -155,15 +199,15 @@ function escribirUser(valor){
 
     }
 
-// Peticion que recibe los datos de la tabla eventos, actos en la bbdd
+// Peticion que recibe los datos de las tablas en la bbdd, "admins", "eventos" y "asistentes"
 
-    function cargarDatosEventos(pagina) {
+    function cargarDatos(pagina,source) {
 
         const xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText), );
+                crearTablaBody(JSON.parse(this.responseText),source);
                 cargarTotalDatosEventos()
     
     
@@ -174,59 +218,7 @@ function escribirUser(valor){
             }
         });
     
-        xhttp.open("GET", "../src/eventos.php?pagina="+pagina, true);
-        xhttp.send();
-    
-    }
-
-
-// Esta peticion es identica a la anterior pero carga los datos de la tabla Asistentes
-    function cargarDatosAsistentes(pagina) {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-    
-                crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
-                cargarTotalDatosAsistentes()
-    
-    
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-    
-            }
-        });
-    
-        xhttp.open("GET", "../src/asistentes.php?pagina="+pagina, true);
-        xhttp.send();
-    
-    }
-
-
-// Tercera de este grupo para recabar la información de las tres tablas de la base de datos.
-
-
-    function cargarDatosAdmins(pagina) {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-    
-                crearTablaHead(JSON.parse(this.responseText));
-                crearTablaBody(JSON.parse(this.responseText));
-                cargarTotalDatosAdmins()
-    
-    
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-    
-            }
-        });
-    
-        xhttp.open("GET", "../src/admins.php?pagina="+pagina, true);
+        xhttp.open("GET", "../src/"+source+".php?pagina="+pagina, true);
         xhttp.send();
     
     }
