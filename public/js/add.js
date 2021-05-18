@@ -14,6 +14,20 @@ function formularioEventos(){
 
     })
 
+    añadirAdmin.addEventListener("click", function(){
+        
+        formularioModal("Nuevo Administrador");
+        console.log("ya empezamos")
+
+    })
+
+    añadirAsistente.addEventListener("click", function(){
+        
+        formularioModal("Nuevo Asistente");
+        
+
+    })
+
 
 }
 
