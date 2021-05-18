@@ -15,16 +15,14 @@ class añadir extends conexion
             $direccion = $_POST["direccion"];
             $fecha_hora = $_POST["fecha_hora"];
             $fecha_hora = new Datetime($fecha_hora);
-            $fecha_hora = $fecha_hora->format("Y-m-d H:i:s");
+            $fecha_hora = $fecha_hora->format('Y-m-d H:i:s');
             $plazas_totales = $_POST["plazas_totales"];
 
-            var_dump($fecha_hora);
+            // var_dump($fecha_hora);
 
 
-            $sql = "INSERT INTO acto(id_administrador, nombre, descripcion, direccion, fecha_hora, plazas_totales) VALUES ($idAdmin, $nombreEvento, $descripcion, $direccion, $fecha_hora, $plazas_totales)";
+            $sql = "INSERT INTO acto(id_administrador, nombre, descripcion, direccion, fecha_hora, plazas_totales) VALUES ($idAdmin, '$nombreEvento', '$descripcion', '$direccion', '$fecha_hora', $plazas_totales)";
             $result = $this->connect()->query($sql);
-
-            var_dump($result);
 
         }else {
         
