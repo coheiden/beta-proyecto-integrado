@@ -43,9 +43,9 @@ function crearTablaBody(infoEventos) {
             let id = (infoEventos[value]["id_acto"]);
 
             fila.addEventListener("click", function (e) {
-                //e.cancelBubble = true;
+                
                 fila = e.target.parentNode;
-                //fila.parentNode.removeChild(tr);
+
                 mostrarDetalle(id);
                 
               });
@@ -139,6 +139,7 @@ function cambiarTitulo(){
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Eventos"
         cargarDatosEventos(0);
+        
     })
 
     botonAdmins.addEventListener("click", function(){
