@@ -1,4 +1,7 @@
 <?php
+// Autoloader que carga tanto clases como interfaces 
+
+
 
 function cargadorClases($clase){
     $fichero = "clases/{$clase}.php";
