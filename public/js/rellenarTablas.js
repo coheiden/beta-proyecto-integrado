@@ -7,6 +7,8 @@ function main() {
     cargarDatos(0,"eventos");
     cambiarTitulo();
     cargarDatosUsuario();
+    formularioEventos();
+
 
 }
 
@@ -41,6 +43,7 @@ function crearTablaBody(infoEventos, source) {
         for (valor in infoEventos[value]) {
 
             let campo = document.createElement("td");
+            campo.className = "click";
             campo.innerHTML = infoEventos[value][valor];
 
             fila.appendChild(campo);
@@ -117,27 +120,10 @@ function escribirUser(valor){
 
 }
 
-    function mostrarDetalle(id) {
-
-        const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function () {
-            if (this.readyState == 4 && this.status == 200) {
-                
-                dibujarDetalle(JSON.parse(this.responseText));
-
-            }else if (this.status == 403) {
-                
-                window.location.href = "../login.html";
-
-            }
-        });
-
-        xhttp.open("GET", "../src/eventosDetalle.php?id="+id, true);
-        xhttp.send();
+// Funcion que genera el modal para ver los datos del evento o administrador
 
         function dibujarDetalle(datos) {
 
-            //console.log(datos);
             detalleBody = document.getElementById("detalleBody");
             detalleNombre = document.getElementById("detalleNombre");
             detalleDescripcion = document.getElementById("detalleDescripcion");
@@ -169,7 +155,7 @@ function escribirUser(valor){
 
         divDetalle.style.display = "block";
       }
-    }
+
 
 
 
@@ -219,6 +205,27 @@ function escribirUser(valor){
         });
     
         xhttp.open("GET", "../src/"+source+".php?pagina="+pagina, true);
+        xhttp.send();
+    
+    }
+
+
+    function mostrarDetalle(id) {
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                
+                dibujarDetalle(JSON.parse(this.responseText));
+
+            }else if (this.status == 403) {
+                
+                window.location.href = "../login.html";
+
+            }
+        });
+
+        xhttp.open("GET", "../src/eventosDetalle.php?id="+id, true);
         xhttp.send();
     
     }

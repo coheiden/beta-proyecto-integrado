@@ -9,17 +9,20 @@
 
     <script type="text/javascript" src="./js/rellenarTablas.js"></script>
     <script type="text/javascript" src="./js/paginador.js"></script>
+    <script type="text/javascript" src="./js/add.js"></script>
 
 
-    <link href="./css/main_web_custom.css" rel="stylesheet">
+
+    <link href="./css/custom.css" rel="stylesheet">
+
 
   </head>
   <body>
     
     <header class="navbar navbar-dark sticky-top bg-light flex-md-nowrap p-2 shadow">
       <span class="navbar col-md-3 col-lg-2 me-0 px-3 ">  
-        <span class="logo logo-1">EVENT
-        <span class="logo logo-2">MAKER</span></span> 
+        <span class="logo logo-1 logo-3">EVENT
+        <span class="logo logo-2 logo-3">MAKER</span></span> 
       </span>
 
    
@@ -49,11 +52,11 @@
         </div>
         <ul class="list-group list-group-flush " id="menu">
           <li class="list-group-item fs-5 click" id="botonEventos">Eventos</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir evento</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click" id="añadirEvento">Añadir evento</li>
          <li class="list-group-item fs-5 click"  id="botonAdmins">Admin</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir Admin</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click" id="añadirAdmin">Añadir Admin</li>
           <li class="list-group-item fs-5 click" id="botonAsistentes" >Asistentes</li>
-          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click">Añadir Asistente</li>
+          <li class="list-group-item fs-6 font-monospace border-bottom border-dark click" id="añadirAsistente">Añadir Asistente</li>
         </ul>   
       </div>
 
@@ -95,6 +98,9 @@
 
   </div>
 </div>
+
+
+<!-- MODAL DETALLE TABLA -->
 <div id="detalle">
   <div>
     <div class="modal-content">
@@ -128,5 +134,67 @@
 
 
 </div>
+
+
+<!-- MODAL DETALLE FORMULARIO INSERCION DATOS -->
+
+<div id="detalleForm"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="formNombre" class="modal-title"></h5>
+        <button id="botonCerrar2" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- INICIO FORMULARIO  -->
+
+        <form id="formulario-modal" method="POST" action="">
+          <div class="mb-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="nombre" value="" name="nombre">
+              <label for="floatingInputGrid">Nombre</label>
+            </div>
+            </div>
+            <div class="mb-3">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" value="" name="correo">
+              <label for="floatingInputGrid">Correo Electrónico</label>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="row g-3 align-items-center">
+              <div class="col">
+                <label for="example-datetime-local-input" class="col col-form-label">Fecha y hora </label>
+                <div class="col-10">
+                  <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" name="fecha_hora">
+                </div>
+              </div>
+              <div class="col">
+                <label for="floatingInputGrid">Plazas Totales</label>
+                <br>
+                  <input type="number" class="form-control" id="plazas_totales" value="" min="0" name="plazas_totales">
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="direccion" value="" name="direccion">
+              <label for="floatingInputGrid">Localización</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control" id="floatingTextarea2" style="height: 100px" name="descripcion"></textarea>
+              <label for="floatingTextarea2">Descripción</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="enviar">Guardar</button>
+        </form>
+
+
+      </div>
+    </div>
+</div>
+
+
   </body>
 </html>
