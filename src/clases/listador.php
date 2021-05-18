@@ -39,7 +39,7 @@ class listador extends conexion
 
             $offset = $pagina * 10;
 
-            $sql = "SELECT id_acto, id_administrador, nombre,fecha_hora  from acto LIMIT $offset, 10";
+            $sql = "SELECT id_acto, nombre, direccion, fecha_hora  from acto LIMIT $offset, 10";
 
             $result = $this->connect()->query($sql);
             if ($result) {
