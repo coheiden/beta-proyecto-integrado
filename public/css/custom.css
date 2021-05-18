@@ -155,3 +155,9 @@ body {
 .click:hover{
   color:#9c9c9c;
 }
+
+.disabled {
+  pointer-events: none;
+  background-color: rgb(110, 110, 110) !important;
+
+}
