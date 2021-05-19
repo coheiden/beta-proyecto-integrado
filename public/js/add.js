@@ -27,10 +27,7 @@ function formularioEventos(){
 
     })
 
-
 }
-
-
 
 function formularioModal() {
 
@@ -48,7 +45,12 @@ function formularioModal() {
         e.preventDefault();
         
         enviarInfoForm(this);
-        modal.style.display = "none";
+        modal.style.display = "none";2
+
+        let titulo = document.getElementById("titulo")
+        titulo.innerHTML = "Eventos"
+        cargarDatos(0,"eventos");
+        cargarTotalDatos();
 
     })
 
@@ -88,6 +90,11 @@ function formularioModalAdmin() {
         enviarInfoFormAdmin(this);
         modal.style.display = "none";
 
+        let titulo = document.getElementById("titulo")
+        titulo.innerHTML = "Administradores"
+        cargarDatos(0,"admins");
+        cargarTotalDatosAdmins();
+
     })
 
 
@@ -125,6 +132,12 @@ function formularioModalAsistente() {
         
         enviarInfoFormAsistente(this);
         modal.style.display = "none";
+
+        let titulo = document.getElementById("titulo")
+        titulo.innerHTML = "Asistentes"
+        cargarDatos(0,"asistentes");
+        cargarTotalDatosAsistentes();
+
 
     })
 
@@ -178,8 +191,7 @@ function enviarInfoFormAdmin(formElement) {
 
       if (this.readyState == 4 && this.status == 200) {
 
-
-      }
+      } 
 
     };
 
