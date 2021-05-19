@@ -103,7 +103,11 @@ function crearTablaHead(infoEventos, source) {
         tabla.appendChild(fila);
     
         }
-    }
+
+        } else {
+
+            tabla.innerHTML = " <h2>SIN DATOS</h2>";
+    } 
 
  
 }
