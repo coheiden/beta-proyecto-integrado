@@ -241,5 +241,53 @@
   </div>
 </div>
 
+
+<!-- MODAL INSERCION DATOS ASISTENTES -->
+
+<div id="detalleFormAsistente"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 id="formNombreAsistente" class="modal-title"></h5>
+      <button id="botonCerrarAsistente" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <!-- INICIO FORMULARIO  -->
+
+      <form id="formulario-modalAsistente" method="POST" action="">
+        <div class="mb-3">
+          <div class="form-floating">
+            <input type="text" class="form-control"  value="" name="nombre">
+            <label for="floatingInputGrid">Nombre</label>
+          </div>
+          <br>
+          <div class="form-floating">
+            <input type="text" class="form-control"  value="" name="apellidos">
+            <label for="floatingInputGrid">Apellidos</label>
+          </div>
+          </div>
+          <div class="mb-3">
+          <div class="form-floating">
+            <input type="email" class="form-control"  value="" name="correo">
+            <label for="floatingInputGrid">Correo Electrónico</label>
+          </div>
+          <br>
+          <div class="form-floating">
+            <input type="text" class="form-control"  value="" name="dni">
+            <label for="floatingInputGrid">DNI</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="form-floating">
+            <input type="text" class="form-control"  value="" name="codigo_postal">
+            <label for="floatingInputGrid">Codigo Postal</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="enviarAdmin">Guardar</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>
   </body>
 </html>

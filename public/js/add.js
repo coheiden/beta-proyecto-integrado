@@ -78,7 +78,7 @@ function formularioModalAdmin() {
     let titulo = document.getElementById("formNombreAdmin");
     titulo.innerHTML = "Nuevo Administrador"
 
-    let form = document.getElementById("formulario-modalAdminx");
+    let form = document.getElementById("formulario-modalAdmin");
 
     form.addEventListener("submit", function(e){
         
@@ -105,6 +105,45 @@ function formularioModalAdmin() {
     
 
 }
+
+
+function formularioModalAsistente() {
+
+
+    let modal = document.getElementById("detalleFormAsistente");
+
+
+    let titulo = document.getElementById("formNombreAsistente");
+    titulo.innerHTML = "Nuevo Asistente"
+
+    let form = document.getElementById("formulario-modalAsistente");
+
+    form.addEventListener("submit", function(e){
+        
+        e.preventDefault();
+        console.log(this)
+        
+        enviarInfoFormAsistente(this);
+        modal.style.display = "none";
+
+    })
+
+
+    botonCerrar2 = document.getElementById("botonCerrarAsistente");
+
+
+    botonCerrar2.addEventListener("click", function() {
+
+        modal.style.display = "none";
+
+        });
+
+
+        modal.style.display = "block";
+    
+
+}
+
 
 // PETICION ASINCRONA QUE ENVIA INFORMACION DEL FORMULARIO
 
@@ -145,5 +184,24 @@ function enviarInfoFormAdmin(formElement) {
     };
 
     xhttp.open("POST", "../src/añadirAdmin.php", true);
+    xhttp.send(formData);
+}
+
+
+function enviarInfoFormAsistente(formElement) {
+
+    let formData = new FormData(formElement);
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+
+      if (this.readyState == 4 && this.status == 200) {
+
+
+      }
+
+    };
+
+    xhttp.open("POST", "../src/añadirAsistente.php", true);
     xhttp.send(formData);
 }

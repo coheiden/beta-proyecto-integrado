@@ -32,7 +32,7 @@ class añadir extends conexion
     public function añadirAsistente(){
 
         if (!empty($_POST)) {
-            var_dump($_POST);
+
             $dni = $_POST["dni"];
             $fecha_hora_registro = date("Y-m-d h:i:s");
             $codigo_postal = $_POST["codigo_postal"];
@@ -40,11 +40,10 @@ class añadir extends conexion
             $apellidos = $_POST["apellidos"];
             $correo = $_POST["correo"];
 
-
-            $stmt = $this->conn->prepare("INSERT INTO asistente(dni, fecha_hora_registro, codigo_postal, nombre, apellidos, correo) VALUES (?,?,?,?,?,?)");
-            $stmt->bind_param("ssisss");
-            $result = $stmt->execute();
-            $stmt->close();
+            $sql = "INSERT INTO asistente(dni,fecha_hora_registro, codigo_postal, nombre, apellidos, correo) VALUES ('$dni', '$fecha_hora_registro', $codigo_postal, '$nombreAsistente', '$apellidos', '$correo')";
+            var_dump($sql);
+            $result = $this->connect()->query($sql);
+           
         }
 
     }

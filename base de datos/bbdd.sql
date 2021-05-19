@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS administrador(
 );
 
 CREATE TABLE IF NOT EXISTS asistente(
-    id_asistente INT PRIMARY KEY ,
+    id_asistente INT AUTO_INCREMENT PRIMARY KEY ,
     dni VARCHAR(9),
     fecha_hora_registro DATETIME,
     codigo_postal INT(5),
