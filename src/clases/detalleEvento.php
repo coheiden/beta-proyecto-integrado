@@ -22,3 +22,4 @@ class administrador extends conexion
 
     }      
 }
+}
