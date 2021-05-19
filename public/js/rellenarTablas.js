@@ -79,10 +79,10 @@ function crearTablaBody(infoEventos, source) {
 // La 2º funcion que pinta la tabla , en concreto esta se encarga de pintar el header de la tabla
 
 function crearTablaHead(infoEventos, source) {
-
+    let tabla = document.getElementById("tablaHead");
+    tabla.innerHTML = " ";
     if (infoEventos.length > 0) {
-        let tabla = document.getElementById("tablaHead");
-        tabla.innerHTML = " ";
+
         let fila = document.createElement("tr");
         for (value in infoEventos[0]) {
                 let campo = document.createElement("th");
