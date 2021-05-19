@@ -41,7 +41,7 @@ body {
     width: 30%;
   }
   
-  #detalle , #detalleForm{
+  #detalle , #detalleForm, #detalleFormAdmins, #detalleFormAsistentes{
     display: none;
     position: absolute;
     height: 200px;

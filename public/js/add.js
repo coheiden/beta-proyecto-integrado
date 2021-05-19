@@ -9,21 +9,20 @@ function formularioEventos(){
 
     añadirEvento.addEventListener("click", function(){
         
-        formularioModal("Nuevo Evento");
+        formularioModal();
         
 
     })
 
     añadirAdmin.addEventListener("click", function(){
         
-        formularioModal("Nuevo Administrador");
-        console.log("ya empezamos")
+        formularioModalAdmin();
 
     })
 
     añadirAsistente.addEventListener("click", function(){
         
-        formularioModal("Nuevo Asistente");
+        formularioModalAsistente();
         
 
     })
@@ -33,12 +32,14 @@ function formularioEventos(){
 
 
 
-function formularioModal(source) {
+function formularioModal() {
+
 
     let modal = document.getElementById("detalleForm");
 
+
     let titulo = document.getElementById("formNombre");
-    titulo.innerHTML = source
+    titulo.innerHTML = "Nuevo Evento"
 
     let form = document.getElementById("formulario-modal");
 
@@ -52,7 +53,45 @@ function formularioModal(source) {
     })
 
 
-    botonCerrar2 = document.getElementById("botonCerrar2");
+    botonCerrar = document.getElementById("botonCerrar2");
+
+
+    botonCerrar.addEventListener("click", function() {
+
+        modal.style.display = "none";
+
+        });
+
+
+        modal.style.display = "block";
+    
+
+}
+
+
+function formularioModalAdmin() {
+
+
+    let modal = document.getElementById("detalleFormAdmins");
+
+
+    let titulo = document.getElementById("formNombreAdmin");
+    titulo.innerHTML = "Nuevo Administrador"
+
+    let form = document.getElementById("formulario-modalAdminx");
+
+    form.addEventListener("submit", function(e){
+        
+        e.preventDefault();
+        console.log(this)
+        
+        enviarInfoFormAdmin(this);
+        modal.style.display = "none";
+
+    })
+
+
+    botonCerrar2 = document.getElementById("botonCerrarAdmin");
 
 
     botonCerrar2.addEventListener("click", function() {
@@ -66,7 +105,6 @@ function formularioModal(source) {
     
 
 }
-
 
 // PETICION ASINCRONA QUE ENVIA INFORMACION DEL FORMULARIO
 
@@ -87,5 +125,25 @@ function enviarInfoForm(formElement) {
     };
 
     xhttp.open("POST", "../src/añadirEvento.php", true);
+    xhttp.send(formData);
+}
+
+// Envio datos formulario ADMINISTRADOR
+
+function enviarInfoFormAdmin(formElement) {
+
+    let formData = new FormData(formElement);
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+
+      if (this.readyState == 4 && this.status == 200) {
+
+
+      }
+
+    };
+
+    xhttp.open("POST", "../src/añadirAdmin.php", true);
     xhttp.send(formData);
 }

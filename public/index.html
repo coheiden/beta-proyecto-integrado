@@ -143,7 +143,7 @@
 </div>
 
 
-<!-- MODAL DETALLE FORMULARIO INSERCION DATOS -->
+<!-- MODAL DETALLE FORMULARIO INSERCION DATOS EVENTOS -->
 
 <div id="detalleForm"> 
     <div class="modal-content">
@@ -202,6 +202,44 @@
     </div>
 </div>
 
+
+<!-- MODAL INSERCION DATOS ADMINS -->
+
+<div id="detalleFormAdmins"> 
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 id="formNombreAdmin" class="modal-title"></h5>
+      <button id="botonCerrarAdmin" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <!-- INICIO FORMULARIO  -->
+
+      <form id="formulario-modalAdmin" method="POST" action="">
+        <div class="mb-3">
+          <div class="form-floating">
+            <input type="text" class="form-control"  value="" name="nombre">
+            <label for="floatingInputGrid">Nombre</label>
+          </div>
+          </div>
+          <div class="mb-3">
+          <div class="form-floating">
+            <input type="email" class="form-control"  value="" name="correo">
+            <label for="floatingInputGrid">Correo Electrónico</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="form-floating">
+            <input type="password" class="form-control"  value="" name="contraseña">
+            <label for="floatingInputGrid">Contraseña</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="enviarAdmin">Guardar</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>
 
   </body>
 </html>
