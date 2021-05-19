@@ -45,12 +45,12 @@ function formularioModal() {
         e.preventDefault();
         
         enviarInfoForm(this);
-        modal.style.display = "none";2
+        modal.style.display = "none";
 
         let titulo = document.getElementById("titulo")
         titulo.innerHTML = "Eventos"
         cargarDatos(0,"eventos");
-        cargarTotalDatos();
+        cargarTotalDatosEventos();
 
     })
 

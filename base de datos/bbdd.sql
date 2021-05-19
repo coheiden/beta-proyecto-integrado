@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS acto(
     id_acto INT AUTO_INCREMENT PRIMARY KEY ,
     id_administrador INT,  
     nombre VARCHAR(20),
-    descripcion VARCHAR(20),
+    descripcion VARCHAR(200),
     direccion VARCHAR(20),
     fecha_hora DATETIME,
     plazas_ocupadas INT,
