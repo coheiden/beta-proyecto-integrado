@@ -217,74 +217,79 @@ function botonesPaginadorAdmin(total){
 
 
 function botonesPaginadorAsistentes(total){
-    
-
-    total = Math.ceil(total["COUNT(id_asistente)"] / 10)
-
-    
     let ul = document.getElementById("ul-paginador");
     ul.innerHTML = " ";
 
-    let li_inicio = document.createElement("li");
-    li_inicio.className = "page-item click";
+    if (total["COUNT(id_asistente)"] > 0) {
+        total = Math.ceil(total["COUNT(id_asistente)"] / 10)
 
-    ul.appendChild(li_inicio);
-
-    let span_laquao = document.createElement("span");
-    span_laquao.innerHTML = "&laquo;";
-
-    let a_inicio = document.createElement("a");
-    a_inicio.className = "page-link click";
     
-    li_inicio.appendChild(a_inicio);
 
-    a_inicio.appendChild(span_laquao);
-
-    a_inicio.addEventListener("click", function(){
+    
+        let li_inicio = document.createElement("li");
+        li_inicio.className = "page-item click";
+    
+        ul.appendChild(li_inicio);
+    
+        let span_laquao = document.createElement("span");
+        span_laquao.innerHTML = "&laquo;";
+    
+        let a_inicio = document.createElement("a");
+        a_inicio.className = "page-link click";
         
-        cargarDatos(0,"asistentes");
-        
-
-    })
-
-    for(let i = 0 ; i < total; i ++){
-
-        let li_simple = document.createElement("li");
-        li_simple.className = "page-item";
-        let a_simple = document.createElement("a");
-        a_simple.className = "page-link click";
-        a_simple.innerHTML = i+1;
-
-        a_simple.addEventListener("click", function(){
-
-            cargarDatos(i,"asistentes");
-
+        li_inicio.appendChild(a_inicio);
+    
+        a_inicio.appendChild(span_laquao);
+    
+        a_inicio.addEventListener("click", function(){
+            
+            cargarDatos(0,"asistentes");
+            
+    
         })
-
-        li_simple.appendChild(a_simple)
-        ul.appendChild(li_simple);
-
+    
+        for(let i = 0 ; i < total; i ++){
+    
+            let li_simple = document.createElement("li");
+            li_simple.className = "page-item";
+            let a_simple = document.createElement("a");
+            a_simple.className = "page-link click";
+            a_simple.innerHTML = i+1;
+    
+            a_simple.addEventListener("click", function(){
+    
+                cargarDatos(i,"asistentes");
+    
+            })
+    
+            li_simple.appendChild(a_simple)
+            ul.appendChild(li_simple);
+    
+        }
+    
+        let li_final = document.createElement("li");
+        li_final.className = "page-item click";
+    
+        let a_final = document.createElement("a");
+        a_final.className = "page-link click";
+        let span_laquao2 = document.createElement("span");
+        span_laquao2.innerHTML = "&raquo;";
+    
+        li_final.appendChild(a_final);
+    
+        a_final.addEventListener("click", function(){
+            
+            cargarDatos(total - 1,"asistentes");
+            
+    
+        })
+    
+        a_final.appendChild(span_laquao2);
+        ul.appendChild(li_final);
+    
     }
+    
 
-    let li_final = document.createElement("li");
-    li_final.className = "page-item click";
-
-    let a_final = document.createElement("a");
-    a_final.className = "page-link click";
-    let span_laquao2 = document.createElement("span");
-    span_laquao2.innerHTML = "&raquo;";
-
-    li_final.appendChild(a_final);
-
-    a_final.addEventListener("click", function(){
-        
-        cargarDatos(total - 1,"asistentes");
-        
-
-    })
-
-    a_final.appendChild(span_laquao2);
-    ul.appendChild(li_final);
-
+   
 
 }  
