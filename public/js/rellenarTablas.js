@@ -80,28 +80,32 @@ function crearTablaBody(infoEventos, source) {
 
 function crearTablaHead(infoEventos, source) {
 
-    let tabla = document.getElementById("tablaHead");
-    tabla.innerHTML = " ";
-    let fila = document.createElement("tr");
-    for (value in infoEventos[0]) {
+    if (infoEventos.length > 0) {
+        let tabla = document.getElementById("tablaHead");
+        tabla.innerHTML = " ";
+        let fila = document.createElement("tr");
+        for (value in infoEventos[0]) {
+                let campo = document.createElement("th");
+                campo.innerHTML = value;
+    
+                fila.appendChild(campo);
+            
+            tabla.appendChild(fila);
+    
+        }
+    
+        if (source == "eventos") {
             let campo = document.createElement("th");
-            campo.innerHTML = value;
-
+            campo.innerHTML = "inscribir";
+    
             fila.appendChild(campo);
-        
+    
         tabla.appendChild(fila);
-
+    
+        }
     }
 
-    if (source == "eventos") {
-        let campo = document.createElement("th");
-        campo.innerHTML = "inscribir";
-
-        fila.appendChild(campo);
-
-    tabla.appendChild(fila);
-
-    }
+ 
 }
 
 
