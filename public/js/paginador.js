@@ -17,7 +17,7 @@ function cargarTotalDatosEventos() {
 
         }else if (this.status == 403) {
             
-            window.location.href = "../login.html";
+            window.location.href = "login.html";
 
         }
     });
@@ -38,7 +38,7 @@ function cargarTotalDatosAdmins() {
 
         }else if (this.status == 403) {
             
-            window.location.href = "../login.html";
+            window.location.href = "login.html";
 
         }
     });
@@ -60,7 +60,7 @@ function cargarTotalDatosAsistentes() {
 
         }else if (this.status == 403) {
             
-            window.location.href = "../login.html";
+            window.location.href = "login.html";
 
         }
     });

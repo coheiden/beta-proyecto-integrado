@@ -31,6 +31,7 @@ function formularioEventos(){
 
 function formularioModal() {
 
+    console.log("evento")
 
     let modal = document.getElementById("detalleForm");
 
@@ -40,20 +41,20 @@ function formularioModal() {
 
     let form = document.getElementById("formulario-modal");
 
+
     form.addEventListener("submit", function(e){
         
         e.preventDefault();
         
         enviarInfoForm(this);
-        modal.style.display = "none";
 
-        let titulo = document.getElementById("titulo")
-        titulo.innerHTML = "Eventos"
-        cargarDatos(0,"eventos");
-        cargarTotalDatosEventos();
+
+
+        let boton = document.getElementById("enviar");
+
+        boton.addEventListener("click", reload(), false);
 
     })
-
 
     botonCerrar = document.getElementById("botonCerrar2");
 
@@ -73,6 +74,7 @@ function formularioModal() {
 
 function formularioModalAdmin() {
 
+    console.log("admin")
 
     let modal = document.getElementById("detalleFormAdmins");
 
@@ -90,12 +92,11 @@ function formularioModalAdmin() {
         enviarInfoFormAdmin(this);
         modal.style.display = "none";
 
-        let titulo = document.getElementById("titulo")
-        titulo.innerHTML = "Administradores"
-        cargarDatos(0,"admins");
-        cargarTotalDatosAdmins();
+        let boton = document.getElementById("enviarAdmin");
 
+        boton.addEventListener("click", reload(), false);
     })
+
 
 
     botonCerrar2 = document.getElementById("botonCerrarAdmin");
@@ -117,6 +118,8 @@ function formularioModalAdmin() {
 function formularioModalAsistente() {
 
 
+    console.log("asistente")
+
     let modal = document.getElementById("detalleFormAsistente");
 
 
@@ -133,13 +136,13 @@ function formularioModalAsistente() {
         enviarInfoFormAsistente(this);
         modal.style.display = "none";
 
-        let titulo = document.getElementById("titulo")
-        titulo.innerHTML = "Asistentes"
-        cargarDatos(0,"asistentes");
-        cargarTotalDatosAsistentes();
+        let boton = document.getElementById("enviarAsistente");
+
+        boton.addEventListener("click", reload(), false);
 
 
     })
+
 
 
     botonCerrar2 = document.getElementById("botonCerrarAsistente");
@@ -216,4 +219,9 @@ function enviarInfoFormAsistente(formElement) {
 
     xhttp.open("POST", "../src/añadirAsistente.php", true);
     xhttp.send(formData);
+}
+
+// Funcion que recargar la pagina
+function reload(){
+    reload = location.reload();
 }

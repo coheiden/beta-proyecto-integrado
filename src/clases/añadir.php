@@ -5,7 +5,6 @@ class añadir extends conexion
 
     public function añadirEvento($infoAdmin){
         
-        // var_dump($_POST);
 
         if (!empty($_POST)) {
 
@@ -19,11 +18,12 @@ class añadir extends conexion
             $plazas_totales = $_POST["plazas_totales"];
             $plazas_ocupadas = 0;
 
-            // var_dump($fecha_hora);
 
 
             $sql = "INSERT INTO acto(id_administrador, nombre, descripcion, direccion, fecha_hora, plazas_ocupadas, plazas_totales) VALUES ($idAdmin, '$nombreEvento', '$descripcion', '$direccion', '$fecha_hora', $plazas_ocupadas, $plazas_totales)";
             $result = $this->connect()->query($sql);
+
+            return $result;
 
         }
 

@@ -9,7 +9,8 @@ $admin = new administrador();
 $event = new añadir();
 
 session_start();
-$event->añadirEvento($admin->obtenerInfo($_SESSION["user_name"]));
+
+echo json_encode($event->añadirEvento($admin->obtenerInfo($_SESSION["user_name"])));
 
 
 
