@@ -24,9 +24,9 @@ CREATE TABLE IF NOT EXISTS asistente(
 CREATE TABLE IF NOT EXISTS acto(
     id_acto INT AUTO_INCREMENT PRIMARY KEY ,
     id_administrador INT,  
-    nombre VARCHAR(20),
+    nombre VARCHAR(100),
     descripcion VARCHAR(200),
-    direccion VARCHAR(20),
+    direccion VARCHAR(200),
     fecha_hora DATETIME,
     plazas_ocupadas INT,
     plazas_totales INT,
