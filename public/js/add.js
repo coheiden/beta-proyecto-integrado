@@ -46,6 +46,8 @@ function formularioModal() {
         
         e.preventDefault();
         
+        menu_lateral.className = " container-fluid m-2";
+        
         enviarInfoForm(this);
 
 
@@ -61,6 +63,8 @@ function formularioModal() {
 
     botonCerrar.addEventListener("click", function() {
 
+        menu_lateral.className = " container-fluid m-2";
+
         modal.style.display = "none";
 
         });
@@ -69,6 +73,12 @@ function formularioModal() {
         modal.style.display = "block";
     
 
+        if (modal.style.display == "block") {
+        
+
+            menu_lateral.className = " container-fluid m-2 disabled_menu";
+    
+        }
 }
 
 
@@ -88,6 +98,7 @@ function formularioModalAdmin() {
         
         e.preventDefault();
         console.log(this)
+        menu_lateral.className = " container-fluid m-2 ";
         
         enviarInfoFormAdmin(this);
         modal.style.display = "none";
@@ -104,21 +115,29 @@ function formularioModalAdmin() {
 
     botonCerrar2.addEventListener("click", function() {
 
+        menu_lateral.className = " container-fluid m-2 ";
+
         modal.style.display = "none";
+
 
         });
 
 
         modal.style.display = "block";
     
+        if (modal.style.display == "block") {
+        
 
+            menu_lateral.className = " container-fluid m-2 disabled_menu";
+    
+        }
 }
 
 
 function formularioModalAsistente() {
 
 
-    console.log("asistente")
+    let menu_lateral = document.getElementById("menu_lateral");
 
     let modal = document.getElementById("detalleFormAsistente");
 
@@ -131,7 +150,9 @@ function formularioModalAsistente() {
     form.addEventListener("submit", function(e){
         
         e.preventDefault();
-        console.log(this)
+
+        menu_lateral.className = " container-fluid m-2 ";
+
         
         enviarInfoFormAsistente(this);
         modal.style.display = "none";
@@ -152,10 +173,20 @@ function formularioModalAsistente() {
 
         modal.style.display = "none";
 
+        menu_lateral.className = " container-fluid m-2 ";
+
+
         });
 
 
-        modal.style.display = "block";
+    modal.style.display = "block";
+    
+    if (modal.style.display == "block") {
+        
+
+        menu_lateral.className = " container-fluid m-2 disabled_menu";
+
+    }
     
 
 }

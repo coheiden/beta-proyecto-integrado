@@ -42,7 +42,7 @@
 
 <!-- Fin del header , inicio del menu lateral izquierdo  -->
 
-<div class="container-fluid m-2">
+<div class="container-fluid m-2" id="menu_lateral">
   <div class="row">
       <div class="card bg-seconday p-3 " style="width: 12rem;">
         <div class="card-header fs-4 fst-italic border border-primary rounded text-center">
@@ -157,7 +157,7 @@
         <form id="formulario-modal" method="POST" action="">
           <div class="mb-3">
             <div class="form-floating">
-              <input type="text" class="form-control" id="nombre" value="" name="nombre">
+              <input type="text" class="form-control" id="nombre" value="" name="nombre" required>
               <label for="floatingInputGrid">Nombre</label>
             </div>
             </div>
@@ -166,13 +166,13 @@
               <div class="col">
                 <label for="example-datetime-local-input" class="col col-form-label">Fecha y hora </label>
                 <div class="col">
-                  <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" name="fecha_hora">
+                  <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" name="fecha_hora" required>
                   <br>
                 </div>
               </div>
               <div class="mb-3">
                 <div class="form-floating">
-                  <input type="number" class="form-control" id="plazas_totales" value="" name="plazas_totales">
+                  <input type="number" class="form-control" id="plazas_totales" value="" name="plazas_totales" required>
                   <label for="floatingInputGrid">Plazas Totales</label>
                 </div>
                 </div>
@@ -180,7 +180,7 @@
           </div>
           <div class="mb-3">
             <div class="form-floating">
-              <input type="text" class="form-control" id="direccion" value="" name="direccion">
+              <input type="text" class="form-control" id="direccion" value="" name="direccion" required>
               <label for="floatingInputGrid">Localización</label>
             </div>
           </div>
@@ -213,7 +213,7 @@
       <form id="formulario-modalAdmin" method="POST" action="">
         <div class="mb-3">
           <div class="form-floating">
-            <input type="text" class="form-control"  value="" name="nombre">
+            <input type="text" class="form-control"  value="" name="nombre" required>
             <label for="floatingInputGrid">Nombre</label>
           </div>
           </div>
@@ -221,14 +221,14 @@
             <div class="col">
             
           <div class="form-floating">
-            <input type="email" class="form-control"  value="" name="correo">
+            <input type="email" class="form-control"  value="" name="correo" required>
             <label for="floatingInputGrid">Correo Electrónico</label>
           </div>
         </div>
         </div>
         <div class="mb-3">
           <div class="form-floating">
-            <input type="password" class="form-control"  value="" name="contraseña">
+            <input type="password" class="form-control"  value="" name="contraseña" required>
             <label for="floatingInputGrid">Contraseña</label>
           </div>
         </div>
@@ -255,23 +255,23 @@
       <form id="formulario-modalAsistente" method="POST" action="">
         <div class="mb-3">
           <div class="form-floating">
-            <input type="text" class="form-control"  value="" name="nombre">
+            <input type="text" class="form-control"  value="" name="nombre" required>
             <label for="floatingInputGrid">Nombre</label>
           </div>
           <br>
           <div class="form-floating">
-            <input type="text" class="form-control"  value="" name="apellidos">
+            <input type="text" class="form-control"  value="" name="apellidos" required>
             <label for="floatingInputGrid">Apellidos</label>
           </div>
           </div>
           <div class="mb-3">
           <div class="form-floating">
-            <input type="email" class="form-control"  value="" name="correo">
+            <input type="email" class="form-control"  value="" name="correo" required>
             <label for="floatingInputGrid">Correo Electrónico</label>
           </div>
           <br>
           <div class="form-floating">
-            <input type="text" class="form-control"  value="" name="dni">
+            <input type="text" class="form-control"  value="" name="dni" required>
             <label for="floatingInputGrid">DNI</label>
           </div>
         </div>
