@@ -66,6 +66,19 @@ class añadir extends conexion
 
     }
 
+    public function inscribir($id){
+        
+
+            $sql = "UPDATE acto set plazas_ocupadas = (plazas_ocupadas+1) , plazas_totales = (plazas_totales-1) where id_acto = $id";
+
+            $result = $this->connect()->query($sql);
+
+            return $result;
+        
+
+
+    }
+
 
 
 }
