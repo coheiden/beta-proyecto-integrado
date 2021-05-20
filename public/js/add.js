@@ -84,8 +84,6 @@ function formularioModal() {
 
 function formularioModalAdmin() {
 
-    console.log("admin")
-
     let modal = document.getElementById("detalleFormAdmins");
 
 

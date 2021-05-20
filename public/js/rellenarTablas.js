@@ -30,16 +30,14 @@ function crearTablaBody(infoEventos, source) {
                 let id = (infoEventos[value]["id_acto"]);
 
                 fila.addEventListener("click", function (e) {
-                    //e.cancelBubble = true;
+
                     fila = e.target.parentNode;
-                    //fila.parentNode.removeChild(tr);
+
                     mostrarDetalle(id);
                     
                   });
                 
             }
-
-
 
         for (valor in infoEventos[value]) {
 
@@ -84,9 +82,24 @@ function crearTablaHead(infoEventos, source) {
     if (infoEventos.length > 0) {
 
         let fila = document.createElement("tr");
+        let i = 0
         for (value in infoEventos[0]) {
                 let campo = document.createElement("th");
                 campo.innerHTML = value;
+                console.log(i);
+              
+
+                // Ordena de forma ascendente o descendente segun el campo NOT WORKING //solo ordena por id
+                if (i < 5) {
+                    campo.className = "click";
+                    campo.setAttribute("onclick", "sortTable("+i+")")
+                    i++;
+                }
+               
+                              
+
+              
+
     
                 fila.appendChild(campo);
             
@@ -103,10 +116,89 @@ function crearTablaHead(infoEventos, source) {
         tabla.appendChild(fila);
     
         }
+
+        orden = "ASC";
+        crearTablaBody(infoEventos,source, orden);
+
     }
 
  
 }
+
+
+
+// Funcion ordena tabla
+
+function sortTable(n) {
+    var table,
+      rows,
+      switching,
+      i,
+      x,
+      y,
+      shouldSwitch,
+      dir,
+      switchcount = 0;
+    table = document.getElementById("tabla_principal");
+    switching = true;
+    //Set the sorting direction to ascending:
+    dir = "asc";
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.getElementsByTagName("tr");
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < rows.length -1; i++) { //Change i=0 if you have the header th a separate table.
+
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        // console.log(rows[i])
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("td")[n];
+        y = rows[i + 1].getElementsByTagName("td")[n];
+        // console.log(x)
+        // console.log(y)
+
+
+        /*check if the two rows should switch place,
+        based on the direction, asc or desc:*/
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        //Each time a switch is done, increase this count by 1:
+        switchcount++;
+      } else {
+        /*If no switching has been done AND the direction is "asc",
+        set the direction to "desc" and run the while loop again.*/
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+  
+  
 
 
 
@@ -238,7 +330,6 @@ function escribirUser(valor){
         xhttp.addEventListener("readystatechange", function () {
             if (this.readyState == 4 && this.status == 200) {
                 crearTablaHead(JSON.parse(this.responseText), source);
-                crearTablaBody(JSON.parse(this.responseText),source);
 
                 // cargarTotalDatosEventos()    
     
@@ -255,7 +346,7 @@ function escribirUser(valor){
     
     }
 
-
+// Peticion para cargar la informacion detallada de los eventos
     function mostrarDetalle(id) {
 
         const xhttp = new XMLHttpRequest();

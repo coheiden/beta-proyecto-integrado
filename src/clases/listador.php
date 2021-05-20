@@ -33,13 +33,13 @@ class listador extends conexion
         }
     }
 
-    public function listarEventos($pagina){
+    public function listarEventos($pagina, $campo = "nombre",$orden = "ASC"){
 
         if (sesion::comprobarSesion() == true) {
 
             $offset = $pagina * 10;
 
-            $sql = "SELECT id_acto, nombre, direccion, fecha_hora, plazas_totales - plazas_ocupadas AS plazas_libres   from acto LIMIT $offset, 10";
+            $sql = "SELECT id_acto, nombre, direccion, fecha_hora, plazas_totales - plazas_ocupadas AS plazas_libres from acto ORDER BY $campo $orden LIMIT $offset, 10 ";
 
             $result = $this->connect()->query($sql);
             if ($result) {
