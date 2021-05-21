@@ -196,7 +196,7 @@ function escribirUser(valor){
                 let fila = document.createElement("tr");
         
                 for (valor in datos) {
-                    console.log(valor);
+                    //console.log(valor);
 
                     if (valor != "nombre" && valor != "descripcion") {
                         let campo = document.createElement("td");
