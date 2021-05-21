@@ -118,7 +118,10 @@ function crearTablaHead(infoEventos, source) {
 
         crearTablaBody(infoEventos,source);
 
-    }
+        }else {
+
+            tabla.innerHTML = " <h2>SIN DATOS</h2>";
+    } 
 
  
 }
