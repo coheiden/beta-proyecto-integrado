@@ -41,7 +41,7 @@ class añadir extends conexion
             $correo = $_POST["correo"];
 
             $sql = "INSERT INTO asistente(dni,fecha_hora_registro, codigo_postal, nombre, apellidos, correo) VALUES ('$dni', '$fecha_hora_registro', $codigo_postal, '$nombreAsistente', '$apellidos', '$correo')";
-            var_dump($sql);
+           
             $result = $this->connect()->query($sql);
            
         }
@@ -61,6 +61,7 @@ class añadir extends conexion
 
 
             $sql = "INSERT INTO administrador(nombre_usuario, contraseña, correo) VALUES ('$nombre', '$contraseñaHash', '$correo')";
+            
             $result = $this->connect()->query($sql);
         }
 
@@ -69,7 +70,7 @@ class añadir extends conexion
     public function inscribir($id){
         
 
-            $sql = "UPDATE acto set plazas_ocupadas = (plazas_ocupadas+1) , plazas_totales = (plazas_totales-1) where id_acto = $id";
+            $sql = "UPDATE acto set plazas_ocupadas = (plazas_ocupadas+1) where id_acto = $id";
 
             $result = $this->connect()->query($sql);
 
