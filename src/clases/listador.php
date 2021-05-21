@@ -63,7 +63,7 @@ class listador extends conexion
             $offset = $pagina * 10;
 
 
-            $sql = "SELECT id_asistente, dni, nombre, correo from asistente LIMIT $offset, 10";
+            $sql = "SELECT id_asistente, dni, nombre, apellidos, correo from asistente LIMIT $offset, 10";
             $result = $this->connect()->query($sql);
             if ($result) {
                 $listadoAsistentes = $result->fetch_all(MYSQLI_ASSOC);
