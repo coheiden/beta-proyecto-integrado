@@ -41,7 +41,7 @@ body {
     width: 30%;
   }
   
-  #detalle , #detalleForm, #detalleFormAdmins, #detalleFormAsistente{
+  #detalle , #detalleForm, #detalleFormAdmins, #detalleFormAsistente, #detalleFormAñadir{
     display: none;
     position: absolute;
     height: 45%;
