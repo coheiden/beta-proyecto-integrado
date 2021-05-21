@@ -8,6 +8,7 @@ function inscribirAsistente(asistentes, id){
   let div_modal = document.getElementById("detalleFormAñadir");
   div_modal.style.display = "block"
   let select = document.getElementById("select");
+  select.innerHTML = "";
   let form = document.getElementById("formulario_añadir")
 
   botonCerrar = document.getElementById("botonCerrar3");
@@ -19,8 +20,7 @@ function inscribirAsistente(asistentes, id){
 
   for(value in asistentes){
 
-    let option = document.createElement("option");
-
+    let option = document.createElement("option");  
     option.value = asistentes[value]["id_asistente"];
     option.innerHTML = "Asistente "+asistentes[value]["id_asistente"]+" nombre "+asistentes[value]["nombre"];
 
