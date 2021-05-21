@@ -7,10 +7,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
+    <script type="text/javascript" src="./js/inscribir.js"></script>
     <script type="text/javascript" src="./js/rellenarTablas.js"></script>
     <script type="text/javascript" src="./js/paginador.js"></script>
     <script type="text/javascript" src="./js/add.js"></script>
     <script type="text/javascript" src="./js/ordenarTablas.js"></script>
+
 
 
     <link rel="shortcut icon" type="image/jpg" href="./img/favicon.ico"/>
@@ -290,6 +292,40 @@
         </div>
         <button type="submit" class="btn btn-primary" id="enviarAsistente">Guardar</button>
       </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- MODAL INSCRIBIR ASISTENTE -->
+
+<div id="detalleFormAñadir"> 
+  <div class="modal-content">
+    <div class="modal-header" id="modal_header">
+      <h5 id="formNombreAsistente" class="modal-title">Añadir asistentes</h5>
+      <button id="botonCerrar3" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <!-- INICIO MODAL BODY-->
+
+      <form id="formulario_añadir">
+        <div class="mb-3">
+          <!-- SELECT DINAMICO DOM -->
+          <select class="form-select" aria-label="Default select example" id="select" name="asistente">
+
+          </select>
+          <br>
+          <input class="form-control" type="text" id="mostrarId"
+          aria-label="Disabled input example" name="id_evento" readonly>
+
+        </div>
+        <button type="submit" class="btn btn-primary" id="añadirAsistente">Guardar</button>
+      </form>
+
 
 
     </div>

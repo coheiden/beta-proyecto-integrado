@@ -78,6 +78,25 @@ class listador extends conexion
         }
     }
 
+    public function listarTodosAsistentes(){
+
+        if (sesion::comprobarSesion() == true) {
+
+            $sql = "SELECT id_asistente, nombre from asistente";
+            $result = $this->connect()->query($sql);
+            if ($result) {
+                $listadoAsistentes = $result->fetch_all(MYSQLI_ASSOC);
+
+                return $listadoAsistentes;
+            };
+            
+        }else{
+
+            return http_response_code(403);
+
+        }
+    }
+
 
 // ESTAS 3 FUNCIONES DEVUELVEN LA CANTIDAD DE ELEMENTOS QUE HAY EN CADA TABLA DE LA BBDD 
 // Estas funciones al igual que las anteriores se llaman para realizar peticiones asincronas en js 

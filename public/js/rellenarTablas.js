@@ -24,9 +24,30 @@ function crearTablaBody(infoEventos, source) {
 
         let fila = document.createElement("tr");
 
+        // BUSCAMOS QUE TABLA ES EVENTOS PARA GENERAR LOS LISTENERS NECESARIOS A ESTA TABLA
 
             if (source == "eventos") {
 
+                let campo = document.createElement("td");
+                campo.className = "click"
+                campo.innerHTML = "añadir";
+                if (infoEventos[value]["plazas_libres"] == 0) {
+                    campo.classList.add("disabled");
+    
+                }
+
+                let id_evento = (infoEventos[value]["id_acto"]);
+    
+                campo.addEventListener("click", function (e) {
+                    e.cancelBubble = true;
+                    fila = e.target.parentNode;
+                    //fila.parentNode.removeChild(tr);
+                    id = infoEventos[value]["id_acto"];
+                    obtenerAsistente(id_evento)
+    
+                });
+
+                
                 let id = (infoEventos[value]["id_acto"]);
 
                 fila.addEventListener("click", function (e) {
@@ -36,41 +57,41 @@ function crearTablaBody(infoEventos, source) {
                     mostrarDetalle(id);
                     
                   });
-                
+                //   RECORREMOS EL JSON PARA CREAR LA TABLA CON LOS LISTENERS ANTERIORES
+    
+
+                    for (valor in infoEventos[value]) {
+
+                        let campo = document.createElement("td");
+                        campo.className = "click";
+                        campo.innerHTML = infoEventos[value][valor];
+
+
+                        fila.appendChild(campo);
+                    }
+
+
+                        fila.appendChild(campo);
+                        //console.log(infoEventos[value]["plazas_libres"]);
+        }else {
+
+            // CREAMOS LA TABLA DE ADMIN Y ASISTENTE SIN LOS LISTENERS
+
+            for (valor in infoEventos[value]) {
+
+                campo = document.createElement("td");
+                campo.className = "click";
+                campo.innerHTML = infoEventos[value][valor];
+    
+    
+                fila.appendChild(campo);
             }
-
-        for (valor in infoEventos[value]) {
-
-            let campo = document.createElement("td");
-            campo.className = "click";
-            campo.innerHTML = infoEventos[value][valor];
-
-
-            fila.appendChild(campo);
+    
+    
+                fila.appendChild(campo);
         }
 
-
-        if (source == "eventos") {
-
-            let campo = document.createElement("td");
-            campo.className = "click"
-            campo.innerHTML = "añadir";
-            if (infoEventos[value]["plazas_libres"] == 0) {
-                campo.classList.add("disabled");
-
-            }
-            campo.addEventListener("click", function (e) {
-                e.cancelBubble = true;
-                fila = e.target.parentNode;
-                //fila.parentNode.removeChild(tr);
-                id = infoEventos[0]["id_acto"];
-                inscribirAsistente(id);
-
-            });
-
-            fila.appendChild(campo);
-            //console.log(infoEventos[value]["plazas_libres"]);
-        }
+        
         tabla.appendChild(fila);
 
 }
@@ -88,7 +109,6 @@ function crearTablaHead(infoEventos, source) {
         for (value in infoEventos[0]) {
                 let campo = document.createElement("th");
                 campo.innerHTML = value;
-                console.log(i);
               
 
                 // Ordena de forma ascendente o descendente segun el campo NOT WORKING //solo ordena por id

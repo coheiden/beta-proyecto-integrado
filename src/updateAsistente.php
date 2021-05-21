@@ -5,9 +5,16 @@ include_once "autoload.php";
 
 $admin = new añadir();
 
+var_dump($_POST);
+
 if (!empty($_POST)) {
 
-    $admin->inscribir($_GET["id"]);
+    var_dump($_POST);
+
+    $id = $_POST["id_evento"];
+
+
+    $admin->inscribir($id);
     
 }
 
