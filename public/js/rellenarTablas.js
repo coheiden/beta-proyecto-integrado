@@ -11,9 +11,6 @@ function main() {
 // La 1º funcion que pinta la tabla, esta se encarga de pintar el body de la tabla, la parte principal con los datos que reciben de la base de datos
 
 function crearTablaBody(infoEventos, source) {
-  let tabla = document.getElementById("tablaBody");
-  tabla.innerHTML = " ";
-
     let tabla = document.getElementById("tablaBody");
     tabla.innerHTML = " ";
 
@@ -90,26 +87,6 @@ function crearTablaBody(infoEventos, source) {
 
         
         tabla.appendChild(fila);
-
-    if (source == "eventos") {
-      let campo = document.createElement("td");
-      campo.className = "click";
-      campo.innerHTML = "añadir";
-      if (infoEventos[value]["plazas_libres"] == 0) {
-        campo.classList.add("disabled");
-      }
-      campo.addEventListener("click", function (e) {
-        e.cancelBubble = true;
-        fila = e.target.parentNode;
-        //fila.parentNode.removeChild(tr);
-        id = infoEventos[0]["id_acto"];
-        inscribirAsistente(id);
-      });
-
-      fila.appendChild(campo);
-      //console.log(infoEventos[value]["plazas_libres"]);
-    }
-    tabla.appendChild(fila);
   }
 }
 
