@@ -179,4 +179,28 @@ class listador extends conexion
 
     }
 
+    public function verAsistentes($idActo){
+
+        if (sesion::comprobarSesion() == true) {
+
+            $sql = "SELECT id, nombre, apellidos
+            FROM asistente
+            INNER JOIN asistente_acto ON asistente_acto.id_asistente = asistente.id_asistente
+            WHERE asistente_acto.id_acto LIKE $idActo";
+
+            $result = $this->connect()->query($sql);
+            if ($result) {
+                
+            $asistentes = $result->fetch_all(MYSQLI_ASSOC);
+            return $asistentes;
+            };
+            
+        }else{
+
+            return http_response_code(403);
+
+        }
+
+    }
+
 }
