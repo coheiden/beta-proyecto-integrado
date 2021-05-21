@@ -80,6 +80,19 @@ class añadir extends conexion
 
     }
 
+    public function updateAsistenteActo(){
+
+        $id_acto = $_POST["id_evento"];
+
+        $id_asistente = $_POST["asistente"];
+
+        $sql = "INSERT INTO asistente_acto (id_acto, id_asistente) VALUES ($id_acto, $id_asistente)";
+
+        $result = $this->connect()->query($sql);
+
+        var_dump($sql);
+    }
+
 
 
 }

@@ -3,8 +3,6 @@
 // Funcion que inscribe a los asistentes, falta crear el modal que envie la informacion
 function inscribirAsistente(asistentes, id){
 
-  console.log(id)
-
   let div_modal = document.getElementById("detalleFormAñadir");
   div_modal.style.display = "block"
   let select = document.getElementById("select");
@@ -36,6 +34,8 @@ function inscribirAsistente(asistentes, id){
       
       menu_lateral.className = " container-fluid m-2";
       
+      updateAsistenteActo(this)
+      console.log(this)
       updateAsistente(this);
 
 
@@ -94,4 +94,23 @@ function obtenerAsistente(id) {
   xhttp.open("GET", "../src/todosAsistentes.php", true);
   xhttp.send();
 
+}
+
+
+function updateAsistenteActo(formElement) {
+
+  let formData = new FormData(formElement);
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function () {
+
+    if (this.readyState == 4 && this.status == 200) {
+
+
+    }
+
+  };
+
+  xhttp.open("POST", "../src/updateAsistenteActo.php", true);
+  xhttp.send(formData);
 }
